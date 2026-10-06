@@ -1,90 +1,62 @@
 /*
- * Ogtech nettside – «Fjord»-designet.
- * Dyp fjordblå fra logoen, lys sjøtåke som bakgrunn og teal fra OxyGen600-kabinettet som aksent.
- * Titler i Instrument Serif, brødtekst i Instrument Sans (begge OFL, ligger i fonts/).
+ * Ogtech nettside.
+ * Fjordblå fra logoen som hovedfarge, teal fra OxyGen600-kabinettet som aksent.
+ * All tekst i Schibsted Grotesk (OFL, ligger i fonts/).
  */
 
 @font-face {
-  font-family: "Instrument Serif";
+  font-family: "Schibsted Grotesk";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 900;
   font-display: swap;
-  src: url("fonts/instrument-serif.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Instrument Serif";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/instrument-serif-italic.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Instrument Sans";
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url("fonts/instrument-sans.woff2") format("woff2");
+  src: url("fonts/schibsted-grotesk.woff2") format("woff2");
 }
 
 :root {
   color-scheme: light;
-  --mist: #eef3f2;
-  --mist-2: #e1eae9;
-  --foam: #f8fbfa;
+  --bg: #ffffff;
+  --bg-alt: #f1f5f6;
+  --surface: #ffffff;
   --ink: #0d2433;
-  --ink-soft: #4a6170;
-  --rule: #c7d5d6;
-  --accent: #0c7a78;
-  --accent-bright: #3fc1b6;
-  --deep: #0b2232;
-  --on-deep: #e8f1f1;
-  --on-deep-soft: #9fb7c2;
+  --ink-soft: #4d6270;
+  --line: #dae3e6;
+  --brand: #0d2b40;
+  --brand-hover: #16405e;
+  --on-brand: #ffffff;
+  --accent: #0b7573;
+  --accent-soft: #e2f2f0;
+  --navy: #0b2232;
+  --on-navy: #e6eef0;
+  --on-navy-soft: #9fb5bf;
   --danger: #b23a1f;
 
-  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --font-body: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-  --gutter: clamp(1.25rem, 4vw, 3rem);
-  --header-h: 4.5rem;
+  --font: "Schibsted Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 6px;
+  --container: 74rem;
+  --gutter: clamp(1.25rem, 4vw, 2rem);
 
-  --arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h15M13 6l6 6-6 6'/%3E%3C/svg%3E");
-  --arrow-out: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E");
+  --arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E");
+  --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E");
 }
 
-/*
- * Mørk modus («natt på fjorden»). Følger innstillingen på maskinen, med mindre den besøkende
- * har valgt selv med knappen i topplinjen (da står valget i data-theme på <html>).
- * De to blokkene må være like.
- */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+/* Mørk modus følger innstillingen på maskinen. Utskrift er alltid lys. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
     color-scheme: dark;
-    --mist: #08161f;
-    --mist-2: #0d1f2b;
-    --foam: #102633;
-    --ink: #e6efef;
-    --ink-soft: #93abb6;
-    --rule: #1f3a4a;
-    --accent: #4fd0c4;
-    --accent-bright: #4fd0c4;
-    --deep: #0f2c3f;
+    --bg: #0a1821;
+    --bg-alt: #0e1f2b;
+    --surface: #112634;
+    --ink: #e6eef0;
+    --ink-soft: #9db1bb;
+    --line: #22394a;
+    --brand: #5cc9bf;
+    --brand-hover: #7ad6ce;
+    --on-brand: #062028;
+    --accent: #62d2c7;
+    --accent-soft: #123a3c;
+    --navy: #061119;
     --danger: #ff8a6b;
   }
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --mist: #08161f;
-  --mist-2: #0d1f2b;
-  --foam: #102633;
-  --ink: #e6efef;
-  --ink-soft: #93abb6;
-  --rule: #1f3a4a;
-  --accent: #4fd0c4;
-  --accent-bright: #4fd0c4;
-  --deep: #0f2c3f;
-  --danger: #ff8a6b;
 }
 
 *,
@@ -93,16 +65,26 @@
   box-sizing: border-box;
 }
 
+/* Lenker til en overskrift lander rett under den faste topplinjen (og fanemenyen på produktsiden). */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 1rem);
+  scroll-padding-top: 6rem;
+}
+
+html:has(.subnav) {
+  scroll-padding-top: 9.5rem;
+}
+
+/* Litt luft over målet også når det er en ramme rundt siden som scroller. */
+[id] {
+  scroll-margin-top: 1rem;
 }
 
 body {
   margin: 0;
-  background-color: var(--mist);
+  background-color: var(--bg);
   color: var(--ink);
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -112,16 +94,24 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-h1 em,
-h2 em {
-  color: var(--accent);
+h1 {
+  font-size: clamp(2.1rem, 4.2vw, 3.25rem);
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
 p,
@@ -136,12 +126,12 @@ img {
 }
 
 a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  color: var(--accent);
+  text-underline-offset: 0.18em;
 }
 
 :focus-visible {
+  border-radius: 2px;
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
@@ -150,10 +140,11 @@ a {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
-  z-index: 40;
+  z-index: 50;
+  border-radius: var(--radius);
   padding: 0.5rem 0.75rem;
-  background-color: var(--ink);
-  color: var(--mist);
+  background-color: var(--brand);
+  color: var(--on-brand);
   font-size: 14px;
   transform: translateY(-200%);
 }
@@ -162,24 +153,14 @@ a {
   transform: none;
 }
 
-.wrap {
-  max-width: 82rem;
+.container {
+  max-width: var(--container);
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
 
-/* Små ledetekster: «(01)  Oksygenanlegg». */
-.label {
-  display: flex;
-  gap: 0.75rem;
+.muted {
   color: var(--ink-soft);
-  font-size: 14px;
-  letter-spacing: 0.01em;
-}
-
-.label .num {
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Knapper og lenker ---------- */
@@ -187,124 +168,113 @@ a {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  border: 1px solid var(--ink);
-  padding: 0.9rem 1.4rem;
-  background-color: var(--ink);
-  color: var(--mist);
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  background-color: var(--brand);
+  color: var(--on-brand);
   font-family: inherit;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .btn:hover {
-  border-color: var(--accent);
-  background-color: var(--accent);
-  color: var(--foam);
+  border-color: var(--brand-hover);
+  background-color: var(--brand-hover);
 }
 
-.btn-line {
-  background-color: transparent;
+.btn-outline {
+  border-color: var(--line);
+  background-color: var(--surface);
   color: var(--ink);
 }
 
-/* Lys knapp på mørke flater (hero og havbånd). */
-.btn-light {
-  border-color: var(--on-deep);
-  background-color: var(--on-deep);
-  color: var(--deep);
+.btn-outline:hover {
+  border-color: var(--ink);
+  background-color: var(--surface);
 }
 
-.btn-light:hover {
-  border-color: var(--accent-bright);
-  background-color: var(--accent-bright);
-  color: var(--deep);
+/* Knapper oppå hero-bildet. */
+.btn-white {
+  border-color: #fff;
+  background-color: #fff;
+  color: #0b2232;
 }
 
-.btn-light.btn-line {
+.btn-white:hover {
+  border-color: #dfeceb;
+  background-color: #dfeceb;
+}
+
+.btn-clear {
+  border-color: rgb(255 255 255 / 55%);
   background-color: transparent;
-  color: var(--on-deep);
+  color: #fff;
 }
 
-.btn-light.btn-line:hover {
-  background-color: var(--accent-bright);
-  color: var(--deep);
+.btn-clear:hover {
+  border-color: #fff;
+  background-color: rgb(255 255 255 / 10%);
 }
 
-/* Pil etter teksten. Tegnet som SVG-maske, så den tar fargen til teksten. */
-.arrow::after,
-.out::after {
-  content: "";
-  width: 1.05em;
-  height: 1.05em;
-  flex-shrink: 0;
-  background-color: currentColor;
-  -webkit-mask: var(--arrow) center / contain no-repeat;
-  mask: var(--arrow) center / contain no-repeat;
-  transition: transform 0.2s ease;
-}
-
-.out::after {
-  -webkit-mask-image: var(--arrow-out);
-  mask-image: var(--arrow-out);
-}
-
-.arrow:hover::after,
-a:hover .arrow::after {
-  transform: translateX(4px);
-}
-
-.out:hover::after {
-  transform: translate(2px, -2px);
-}
-
-.link {
+.more {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.15rem;
-  font-weight: 500;
+  gap: 0.4rem;
+  font-weight: 600;
   text-decoration: none;
 }
 
-.link:hover {
-  color: var(--accent);
+.more::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: var(--arrow) center / contain no-repeat;
+  mask: var(--arrow) center / contain no-repeat;
+  transition: transform 0.15s ease;
 }
 
-.actions {
+.more:hover::after {
+  transform: translateX(3px);
+}
+
+.buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 /* ---------- Topplinje ---------- */
 
-.topbar {
+.header {
   position: sticky;
   top: 0;
-  z-index: 30;
-  border-bottom: 1px solid var(--rule);
-  background-color: var(--mist);
+  z-index: 40;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg);
 }
 
-.topbar .wrap {
+.header .container {
   display: flex;
-  height: var(--header-h);
+  min-height: 4.5rem;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .logo img {
   width: auto;
-  height: 28px;
+  height: 30px;
 }
 
 /* Logoen har mørke sekskanter, så mørk modus bruker en lys variant. */
@@ -312,128 +282,78 @@ a:hover .arrow::after {
   display: none;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-left: auto;
-}
-
-.nav a {
-  position: relative;
-  padding-block: 0.25rem;
-  font-size: 15px;
-  text-decoration: none;
-}
-
-.nav a:not(.nav-core)::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 1px;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-
-.nav a:hover::after,
-.nav a[aria-current="page"]::after {
-  transform: scaleX(1);
-}
-
-.nav .nav-core {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  border: 1px solid var(--ink);
-  padding: 0.5rem 0.9rem;
-  font-weight: 500;
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
-}
-
-.nav .nav-core:hover {
-  background-color: var(--ink);
-  color: var(--mist);
-}
-
-.icon-btn {
-  display: none;
-  height: 2.5rem;
-  align-items: center;
-  justify-content: center;
-  border: 0;
-  padding: 0;
-  background: none;
-  color: var(--ink);
-  font: inherit;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-/* Knappen trenger JavaScript, så den vises bare når det kjører. */
-.js .theme-toggle {
-  display: flex;
-  width: 2.5rem;
-}
-
-.theme-toggle svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  transition: transform 0.4s ease;
-}
-
-.theme-toggle:hover svg {
-  transform: rotate(180deg);
-}
-
-.menu-toggle {
-  gap: 0.6rem;
-  font-weight: 500;
-}
-
-.menu-toggle .bars {
-  display: grid;
-  width: 1.25rem;
-  gap: 5px;
-}
-
-.menu-toggle .bars::before,
-.menu-toggle .bars::after {
-  content: "";
-  height: 1.5px;
-  background-color: currentColor;
-  transition: transform 0.25s ease;
-}
-
-.menu-toggle[aria-expanded="true"] .bars::before {
-  transform: translateY(3.25px) rotate(45deg);
-}
-
-.menu-toggle[aria-expanded="true"] .bars::after {
-  transform: translateY(-3.25px) rotate(-45deg);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .logo .logo-dark {
+@media screen and (prefers-color-scheme: dark) {
+  .logo .logo-dark {
     display: block;
   }
 
-  :root:not([data-theme="light"]) .logo .logo-light {
+  .logo .logo-light {
     display: none;
   }
 }
 
-:root[data-theme="dark"] .logo .logo-dark {
-  display: block;
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
 }
 
-:root[data-theme="dark"] .logo .logo-light {
+.nav a {
+  border-radius: var(--radius);
+  padding: 0.5rem 0.8rem;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: var(--bg-alt);
+}
+
+.nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.header .btn {
+  padding: 0.65rem 1.1rem;
+}
+
+.icon-btn {
   display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0;
+  background-color: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  border-color: var(--ink-soft);
+}
+
+.icon-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.menu-toggle .bars {
+  display: grid;
+  width: 1.1rem;
+  gap: 4px;
+}
+
+.menu-toggle .bars span {
+  height: 2px;
+  border-radius: 2px;
+  background-color: currentColor;
 }
 
 /* ---------- Hero (forsiden) ---------- */
@@ -441,10 +361,10 @@ a:hover .arrow::after {
 .hero {
   position: relative;
   display: grid;
-  min-height: min(calc(100svh - var(--header-h)), 60rem);
-  align-items: end;
+  min-height: clamp(30rem, 72vh, 40rem);
+  align-items: center;
   overflow: hidden;
-  background-color: var(--deep);
+  background-color: #0b2232;
   color: #fff;
 }
 
@@ -460,425 +380,601 @@ a:hover .arrow::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgb(6 22 32 / 88%) 0%, rgb(6 22 32 / 20%) 55%, rgb(6 22 32 / 35%));
+  background: linear-gradient(90deg, rgb(7 24 36 / 88%) 0%, rgb(7 24 36 / 60%) 50%, rgb(7 24 36 / 25%) 100%);
 }
 
-.hero .wrap {
+.hero .container {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding-block: clamp(2.5rem, 6vw, 5rem);
+  padding-block: 4rem;
 }
 
-.hero .label {
-  color: rgb(255 255 255 / 75%);
-}
-
-.hero .label .num {
-  color: var(--accent-bright);
+.hero-text {
+  max-width: 38rem;
 }
 
 .hero h1 {
-  max-width: 12ch;
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
+}
+
+.hero p {
   margin-top: 1.25rem;
-  font-size: clamp(3.4rem, 10vw, 9rem);
-  line-height: 0.92;
+  color: rgb(255 255 255 / 85%);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
 }
 
-.hero h1 em {
-  color: var(--accent-bright);
+/* Faktalinje rett under hero. */
+.keyfacts {
+  border-bottom: 1px solid var(--line);
+  background-color: var(--surface);
 }
 
-.hero-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1.5rem 3rem;
-  margin-top: clamp(2rem, 4vw, 3rem);
-  border-top: 1px solid rgb(255 255 255 / 30%);
-  padding-top: 1.5rem;
+.keyfacts ul {
+  display: grid;
+  padding: 0;
+  list-style: none;
 }
 
-.hero-foot p {
-  max-width: 34rem;
-  color: rgb(255 255 255 / 82%);
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
+.keyfacts li {
+  padding: 1.25rem 0;
 }
 
-.hero-foot .actions {
-  margin-top: 0;
+.keyfacts li + li {
+  border-top: 1px solid var(--line);
+}
+
+.keyfacts b {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.keyfacts span {
+  color: var(--ink-soft);
+  font-size: 15px;
 }
 
 /* ---------- Seksjoner ---------- */
 
 .section {
-  padding-block: clamp(4.5rem, 10vw, 8.5rem);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
 }
 
-.tint {
-  background-color: var(--mist-2);
+.section.alt {
+  background-color: var(--bg-alt);
 }
 
-/* To kolonner på store skjermer: ledetekst til venstre, innhold til høyre. */
-.row {
-  display: grid;
-  gap: 1.5rem 3rem;
+.section-head {
+  max-width: 44rem;
+  margin-bottom: 2.5rem;
 }
 
-.statement {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4.6vw, 3.9rem);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
+.section-head p {
+  margin-top: 0.875rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
 }
 
-.statement em {
+.overline {
+  margin-bottom: 0.75rem;
   color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-/* Brødtekst i to spalter på brede skjermer, som i et magasin. */
-.columns {
-  margin-top: clamp(2rem, 4vw, 3.5rem);
-  column-gap: 3rem;
+/* To kolonner: tekst og bilde. */
+.split {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.split.top {
+  align-items: start;
+}
+
+.text > * + * {
+  margin-top: 1rem;
+}
+
+.text p {
   color: var(--ink-soft);
 }
 
-.columns p + p {
-  margin-top: 1em;
-}
-
-.page-head {
-  padding-block: clamp(3.5rem, 9vw, 7.5rem) clamp(2.5rem, 6vw, 4.5rem);
-}
-
-.page-head h1 {
-  max-width: 16ch;
-  margin-top: 1.5rem;
-  font-size: clamp(2.9rem, 7.5vw, 6.5rem);
-}
-
-.page-head .row.half h1 {
-  font-size: clamp(2.6rem, 5.2vw, 4.75rem);
-}
-
-.page-head .lead {
-  max-width: 38rem;
-  margin-top: 1.75rem;
+.text h3 {
+  margin-top: 2rem;
 }
 
 .lead {
-  color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  line-height: 1.5;
+  color: var(--ink);
+  font-size: 1.15rem;
 }
 
-.big-title {
-  font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+.text .lead {
+  color: var(--ink);
 }
 
-.figure {
-  margin: 0;
+.photo {
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-.figure figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.25rem 1rem;
-  margin-top: 0.875rem;
-  color: var(--ink-soft);
-  font-size: 14px;
-}
-
-.figure.wide img {
+.photo img {
   width: 100%;
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-/* Produktbilder med gjennomsiktig bakgrunn står i en lys «tank» med et skjær av sjø nederst. */
-.stage {
+/* Lys flate til produktbilder med gjennomsiktig bakgrunn. */
+.product-shot {
   display: grid;
   place-items: center;
-  padding: clamp(1.5rem, 5vw, 4rem);
-  background-color: var(--foam);
-  background-image: radial-gradient(ellipse at 50% 120%, color-mix(in srgb, var(--accent-bright) 22%, transparent), transparent 65%);
+  border-radius: 8px;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background-color: var(--bg-alt);
 }
 
-.figure .stage img {
-  width: auto;
-  max-height: min(60vh, 34rem);
+.section.alt .product-shot {
+  background-color: var(--surface);
 }
 
-/* ---------- Tjenesteliste (forsiden) ---------- */
-
-.offer-list {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  padding: 0;
-  border-top: 1px solid var(--ink);
-  list-style: none;
-}
-
-.offer-list li {
-  border-bottom: 1px solid var(--rule);
-}
-
-.offer-list a {
-  display: grid;
-  grid-template-columns: 3rem 1fr auto;
-  align-items: baseline;
-  gap: 0.5rem 1.5rem;
-  padding-block: clamp(1.4rem, 3vw, 2.2rem);
-  text-decoration: none;
-  transition:
-    color 0.2s ease,
-    padding 0.3s ease;
-}
-
-.offer-list .num {
+/* «Les mer»: utfyllende tekst ligger skjult til man ber om den. */
+.readmore summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   color: var(--accent);
-  font-size: 14px;
-  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
 }
 
-.offer-list h3 {
-  font-size: clamp(1.9rem, 4.4vw, 3.4rem);
+.readmore summary::-webkit-details-marker {
+  display: none;
 }
 
-.offer-list p {
-  grid-column: 2;
-  max-width: 34rem;
+.readmore summary::before {
+  content: "Les mer";
+}
+
+.readmore[open] summary::before {
+  content: "Vis mindre";
+}
+
+.readmore summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.readmore[open] summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.readmore summary:hover {
+  text-decoration: underline;
+}
+
+.readmore-body {
+  padding-top: 0.5rem;
+}
+
+.readmore-body > * + * {
+  margin-top: 1rem;
+}
+
+.readmore-body p {
   color: var(--ink-soft);
 }
 
-.offer-list .go {
-  grid-row: 1 / span 2;
-  grid-column: 3;
-  align-self: center;
+/* ---------- Kort ---------- */
+
+.cards {
   display: grid;
-  width: 3rem;
-  height: 3rem;
+  gap: 1.25rem;
+}
+
+.cards.top {
+  align-items: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background-color: var(--surface);
+}
+
+.card-media {
+  display: grid;
+  aspect-ratio: 16 / 9;
   place-items: center;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    color 0.2s ease;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg-alt);
 }
 
-.offer-list a:hover {
-  color: var(--accent);
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.offer-list a:hover .go {
-  border-color: var(--accent);
-  background-color: var(--accent);
-  color: var(--foam);
+.card-media.contain img {
+  width: auto;
+  max-height: 85%;
+  object-fit: contain;
 }
 
-/* ---------- Nøkkeltall ---------- */
+.card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+}
 
-.facts {
+.card-body p {
+  color: var(--ink-soft);
+}
+
+.card-body .more {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Hovedproduktet: bredt kort med bilde ved siden av teksten på store skjermer. */
+.card.feature {
+  margin-bottom: 1.25rem;
+}
+
+.card.feature .card-body {
+  justify-content: center;
+}
+
+.card.feature h3 {
+  font-size: 1.5rem;
+}
+
+.card.feature .more {
+  margin-top: 0.5rem;
+}
+
+.shot img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* Mal for referanser (ligger skjult på forsiden til den er fylt ut). */
+.quote {
+  margin: 0;
+}
+
+.quote blockquote {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.quote figcaption {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  margin-top: 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.logos img {
+  width: auto;
+  height: 40px;
+}
+
+/* Mal for «Slik jobber vi» (ligger skjult på forsiden til stegene er bekreftet). */
+.steps {
   display: grid;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  border-top: 1px solid var(--rule);
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: steg;
 }
 
-.fact {
-  border-bottom: 1px solid var(--rule);
-  padding-block: 1.5rem;
+.steps li {
+  display: grid;
+  gap: 0.35rem;
+  border-top: 2px solid var(--accent);
+  padding-top: 1rem;
+  counter-increment: steg;
 }
 
-.fact b {
-  display: block;
-  font-family: var(--font-display);
-  font-size: clamp(2.6rem, 5vw, 4rem);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
+.steps li::before {
+  content: "Steg " counter(steg);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.fact span {
-  display: block;
-  margin-top: 0.6rem;
+.steps span {
+  color: var(--ink-soft);
+}
+
+/* ---------- Sjekkliste ---------- */
+
+.checklist {
+  display: grid;
+  gap: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.checklist li {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  column-gap: 0.75rem;
+}
+
+.checklist li::before {
+  content: "";
+  grid-row: span 2;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: 0.15rem;
+  background-color: var(--accent);
+  -webkit-mask: var(--check) center / contain no-repeat;
+  mask: var(--check) center / contain no-repeat;
+}
+
+.checklist b {
+  font-weight: 600;
+}
+
+.checklist span {
+  color: var(--ink-soft);
+}
+
+/* ---------- Tekniske data ---------- */
+
+.specs {
+  margin: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.specs div {
+  display: grid;
+  gap: 0.15rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  padding-block: 0.8rem;
+}
+
+.specs dt {
   color: var(--ink-soft);
   font-size: 15px;
 }
 
-/* ---------- Havbånd (mørke seksjoner med dybdekurver) ---------- */
-
-.band {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--deep);
-  color: var(--on-deep);
+.specs dd {
+  margin: 0;
+  font-weight: 500;
 }
 
-/* Dybdekurver som på et sjøkart. */
-.band::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600' fill='none' stroke='%237fb8d4' stroke-width='1'%3E%3Cpath d='M-50 470C150 400 280 520 470 450S760 330 930 390 1150 470 1260 420'/%3E%3Cpath d='M-50 510C140 450 300 560 480 495S770 380 940 435 1160 515 1260 470'/%3E%3Cpath d='M-50 550C130 500 310 600 490 540S780 430 950 480 1170 560 1260 520'/%3E%3Cpath d='M-50 590C120 550 320 640 500 585S790 480 960 525 1180 605 1260 570'/%3E%3Cpath d='M720 120c60-40 170-30 200 30s-40 110-120 105-140-95-80-135Z'/%3E%3Cpath d='M690 110c80-60 230-45 265 35s-55 145-160 138-185-115-105-173Z'/%3E%3Cpath d='M660 100c95-80 285-60 330 40s-70 180-200 170-230-135-130-210Z'/%3E%3C/svg%3E");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.14;
-  pointer-events: none;
+/* ---------- Kontaktboks ---------- */
+
+.cta-box {
+  display: grid;
+  gap: 1.5rem 3rem;
+  align-items: center;
+  border-radius: 10px;
+  padding: clamp(1.75rem, 5vw, 3rem);
+  background-color: var(--navy);
+  color: var(--on-navy);
 }
 
-.band > .wrap {
-  position: relative;
+.cta-box p {
+  margin-top: 0.75rem;
+  color: var(--on-navy-soft);
 }
 
-.band .label,
-.band .lead {
-  color: var(--on-deep-soft);
+.cta-box .buttons {
+  margin-top: 0;
 }
 
-.band .label .num,
-.band h2 em {
-  color: var(--accent-bright);
-}
-
-.band .link:hover {
-  color: var(--accent-bright);
-}
-
-.band .stage {
-  background-color: rgb(255 255 255 / 4%);
-}
-
-.band .facts,
-.band .fact,
-.band .fact + .fact {
-  border-color: rgb(255 255 255 / 16%);
-}
-
-.band .fact span {
-  color: var(--on-deep-soft);
-}
-
-.cta h2 {
-  max-width: 18ch;
-  margin-top: 1.5rem;
-  font-size: clamp(2.6rem, 7vw, 6rem);
-}
-
-/* ---------- Produktkapitler ---------- */
-
-.chapter {
-  border-top: 1px solid var(--rule);
-  padding-block: clamp(3rem, 7vw, 6rem);
-}
-
-.band .chapter,
-.chapter.first {
-  border-top: 0;
-}
-
-.chapter h2 {
-  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
-}
-
-.chapter .lead {
-  max-width: 36rem;
+.cta-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
   margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
 }
 
-.prose-text {
-  max-width: 40rem;
-  margin-top: 2rem;
+.cta-contacts span {
+  display: block;
+  color: var(--on-navy-soft);
+  font-size: 14px;
+}
+
+.cta-contacts a {
+  color: var(--on-navy);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cta-contacts a:hover {
+  text-decoration: underline;
+}
+
+.cta-box .btn {
+  border-color: #fff;
+  background-color: #fff;
+  color: #0b2232;
+}
+
+.cta-box .btn:hover {
+  border-color: #dfeceb;
+  background-color: #dfeceb;
+}
+
+.cta-box .btn.btn-outline {
+  border-color: rgb(255 255 255 / 35%);
+  background-color: transparent;
+  color: var(--on-navy);
+}
+
+.cta-box .btn.btn-outline:hover {
+  background-color: transparent;
+  border-color: var(--on-navy);
+}
+
+/* ---------- Undersider ---------- */
+
+.page-header {
+  border-bottom: 1px solid var(--line);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  background-color: var(--bg-alt);
+}
+
+.page-header .lead {
+  max-width: 42rem;
+  margin-top: 1rem;
   color: var(--ink-soft);
 }
 
-.prose-text > * + * {
-  margin-top: 1em;
+.page-header .product-shot {
+  background-color: var(--surface);
 }
 
-.prose-text h3 {
-  margin-top: 2rem;
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: var(--line);
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
   color: var(--ink);
-  font-size: 1.75rem;
+  text-decoration: underline;
 }
 
-.band .prose-text {
-  color: var(--on-deep-soft);
+/* Fanemeny på produktsiden. */
+.subnav {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 30;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--bg);
 }
 
-.band .prose-text h3 {
-  color: var(--on-deep);
+.subnav ul {
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: none;
 }
 
-.chapter-media {
-  margin-top: clamp(2rem, 4vw, 3rem);
+.subnav a {
+  display: block;
+  border-bottom: 2px solid transparent;
+  padding-block: 0.9rem;
+  color: var(--ink-soft);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-.shots {
+.subnav a:hover {
+  border-bottom-color: var(--accent);
+  color: var(--ink);
+}
+
+.screens {
   display: grid;
   gap: 1rem;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
-.shots img {
-  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 60%);
-}
-
-.pair {
-  display: grid;
-  gap: 0 3rem;
+.screens img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
 }
 
 /* ---------- Kalkulator ---------- */
 
-.calc-form {
-  display: grid;
-  gap: 2rem;
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  background-color: var(--surface);
 }
 
-.calc-form label span {
-  display: block;
-  color: var(--ink-soft);
-  font-size: 14px;
+.panel h2 {
+  font-size: 1.4rem;
+}
+
+.calc-form {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.calc-form label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .calc-form input {
   width: 100%;
-  margin-top: 0.25rem;
-  border: 0;
-  border-bottom: 1px solid var(--ink);
-  border-radius: 0;
-  padding: 0.4rem 0;
-  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.9rem;
+  background-color: var(--bg);
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  line-height: 1.2;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.calc-form input::placeholder {
-  color: color-mix(in srgb, var(--ink-soft) 55%, transparent);
+  font: inherit;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 .calc-form input:focus {
-  border-bottom-color: var(--accent);
-  box-shadow: 0 1px 0 0 var(--accent);
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .calc-form .btn {
   justify-self: start;
-}
-
-.result {
-  display: grid;
-  margin-top: 3rem;
-  border-top: 1px solid var(--ink);
 }
 
 .calc-error {
@@ -888,31 +984,75 @@ a:hover .arrow::after {
   font-weight: 500;
 }
 
-.note {
-  max-width: 34rem;
-  margin-top: 2rem;
+.results {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.75rem;
+}
+
+.result {
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-alt);
+}
+
+.result b {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.result span {
   color: var(--ink-soft);
   font-size: 15px;
 }
 
-.note > * + * {
-  margin-top: 0.8em;
+.method {
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.method li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding-block: 0.7rem;
+  font-size: 15px;
+}
+
+.method li span {
+  color: var(--ink-soft);
+}
+
+.method li b {
+  font-weight: 600;
+  text-align: right;
 }
 
 /* ---------- Kontakt ---------- */
 
 .contact-list {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
+  margin: 0;
   padding: 0;
-  border-top: 1px solid var(--ink);
   list-style: none;
 }
 
 .contact-list li {
   display: grid;
-  gap: 0.25rem 2rem;
-  border-bottom: 1px solid var(--rule);
-  padding-block: 1.4rem;
+  gap: 0.1rem;
+  border-bottom: 1px solid var(--line);
+  padding-block: 1rem;
+}
+
+.panel h2 + .contact-list {
+  margin-top: 1.25rem;
 }
 
 .contact-list span {
@@ -922,296 +1062,286 @@ a:hover .arrow::after {
 
 .contact-list a {
   justify-self: start;
-  font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
-  line-height: 1.15;
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 500;
   text-decoration: none;
   overflow-wrap: anywhere;
-  transition: color 0.2s ease;
 }
 
 .contact-list a:hover {
   color: var(--accent);
+  text-decoration: underline;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
+  font-size: 14px;
 }
 
 /* ---------- Personvern ---------- */
 
 .prose {
-  max-width: 44rem;
-  color: var(--ink-soft);
+  max-width: 46rem;
 }
 
 .prose h2 {
-  margin-top: 3rem;
-  color: var(--ink);
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .prose h3 {
-  margin-top: 2rem;
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0;
-  line-height: 1.4;
+  margin-top: 1.75rem;
+  font-size: 1.1rem;
 }
 
 .prose p,
 .prose ul {
-  margin-top: 0.8em;
+  margin-top: 0.75em;
+  color: var(--ink-soft);
 }
 
 .prose ul {
   padding-left: 1.2em;
 }
 
-.prose a {
-  color: var(--accent);
-}
-
 /* ---------- Bunn ---------- */
 
 .footer {
-  border-top: 1px solid rgb(255 255 255 / 10%);
-  background-color: var(--deep);
-  color: var(--on-deep);
+  background-color: var(--navy);
+  color: var(--on-navy-soft);
   font-size: 15px;
 }
 
-.footer .wrap {
-  padding-block: clamp(3.5rem, 7vw, 6rem) 2rem;
+.footer .container {
+  padding-block: 3.5rem 2rem;
 }
 
-.footer-claim {
-  font-family: var(--font-display);
-  font-size: clamp(2.8rem, 8vw, 7rem);
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-}
-
-.footer-claim em {
-  color: var(--accent-bright);
-}
-
-.footer-cols {
+.footer-grid {
   display: grid;
   gap: 2rem;
-  margin-top: clamp(3rem, 6vw, 5rem);
-  border-top: 1px solid rgb(255 255 255 / 18%);
-  padding-top: 2rem;
 }
 
-.footer-cols p,
-.footer-cols a {
-  display: block;
-  color: var(--on-deep);
+.footer-logo {
+  width: auto;
+  height: 28px;
+}
+
+.footer-about p {
+  max-width: 22rem;
+  margin-top: 1rem;
+}
+
+.footer h2 {
+  margin-bottom: 0.75rem;
+  color: var(--on-navy);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.footer ul {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.footer a {
+  color: var(--on-navy-soft);
   text-decoration: none;
 }
 
-.footer-cols a:hover {
-  color: var(--accent-bright);
-}
-
-.footer-cols .label {
-  display: block;
-  margin-bottom: 0.75rem;
-  color: var(--on-deep-soft);
+.footer a:hover {
+  color: var(--on-navy);
+  text-decoration: underline;
 }
 
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.75rem 2rem;
-  margin-top: clamp(3rem, 6vw, 5rem);
-  color: var(--on-deep-soft);
+  gap: 0.5rem 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  padding-top: 1.5rem;
   font-size: 14px;
-}
-
-.footer-bottom nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.footer-bottom a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  color: var(--on-deep);
 }
 
 /* ---------- Bredere skjermer ---------- */
 
-@media (min-width: 720px) {
-  .columns {
-    column-count: 2;
+@media (min-width: 640px) {
+  .keyfacts ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .pair {
-    grid-template-columns: 1fr 1fr;
+  .keyfacts li + li {
+    border-top: 0;
   }
 
-  .facts,
-  .result {
-    grid-template-columns: repeat(var(--cols, 3), 1fr);
-    border-bottom: 1px solid var(--rule);
+  .keyfacts li:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
   }
 
-  .result {
-    --cols: 2;
-  }
-
-  .fact {
-    border-bottom: 0;
-    padding: 2rem 1.5rem 1.5rem 0;
-  }
-
-  .fact + .fact {
-    border-left: 1px solid var(--rule);
+  .keyfacts li:nth-child(even) {
+    border-left: 1px solid var(--line);
     padding-left: 1.5rem;
   }
 
-  .shots {
+  .results {
     grid-template-columns: 1fr 1fr;
   }
 
-  .contact-list li {
-    grid-template-columns: 10rem 1fr;
-    align-items: baseline;
+  .specs div {
+    grid-template-columns: 11rem 1fr;
   }
 
-  .footer-cols {
-    grid-template-columns: repeat(4, 1fr);
+  .screens {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 960px) {
-  .row {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  .keyfacts ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .row.half {
+  .keyfacts li:nth-child(n) {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+    padding-left: 1.5rem;
+  }
+
+  .keyfacts li:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .split {
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem;
   }
 
-  .row.center {
-    align-items: center;
+  .split.wide-text {
+    grid-template-columns: 7fr 5fr;
   }
 
-  .row > .label {
-    padding-top: 0.6rem;
+  .split.flip > :first-child {
+    order: 2;
   }
 
-  .sticky {
-    position: sticky;
-    top: calc(var(--header-h) + 2rem);
-    align-self: start;
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .offer-list a:hover {
-    padding-left: 1rem;
+  .cta-box {
+    grid-template-columns: 1fr auto;
+  }
+
+  .card.feature {
+    flex-direction: row;
+  }
+
+  .card.feature .card-media {
+    flex: 0 0 50%;
+    aspect-ratio: auto;
+    min-height: 18rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .card.feature .card-body {
+    padding: 2.5rem;
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .screens.stack {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
   }
 }
 
 /* ---------- Mobil og nettbrett ---------- */
 
-@media (max-width: 899px) {
-  .js .icon-btn {
+@media (max-width: 959px) {
+  .header .container {
+    gap: 0.5rem;
+  }
+
+  .header .btn {
+    display: none;
+  }
+
+  .js .menu-toggle {
     display: flex;
   }
 
-  .theme-toggle {
+  .menu-toggle {
     margin-left: auto;
   }
 
   /* Uten JavaScript vises lenkene som en vanlig rad under logoen. */
-  .topbar .wrap {
+  .header .container {
     flex-wrap: wrap;
-    height: auto;
-    min-height: var(--header-h);
   }
 
   html:not(.js) .nav {
     order: 5;
     flex-wrap: wrap;
-    gap: 0.5rem 1.25rem;
     width: 100%;
-    margin-left: 0;
-    padding-bottom: 1rem;
+    margin: 0 0 0.75rem -0.8rem;
   }
 
-  /* Med JavaScript blir menyen et eget lag som dekker siden under topplinjen. */
+  /* Med JavaScript blir menyen et panel som felles ut under topplinjen. */
   .js .nav {
-    position: fixed;
-    inset: var(--header-h) 0 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
     display: none;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
     margin: 0;
-    padding: 1.5rem var(--gutter) 2rem;
-    overflow-y: auto;
-    background-color: var(--mist);
+    border-bottom: 1px solid var(--line);
+    padding: 0.5rem var(--gutter) 1.25rem;
+    background-color: var(--bg);
+    box-shadow: 0 16px 24px -16px rgb(0 0 0 / 25%);
   }
 
   .js .nav.open {
     display: flex;
-    animation: menu-in 0.25s ease;
   }
 
   .js .nav a {
-    border-bottom: 1px solid var(--rule);
-    padding-block: 1rem;
-    font-family: var(--font-display);
-    font-size: 2.4rem;
-    line-height: 1.1;
-  }
-
-  .js .nav a:not(.nav-core)::after {
-    display: none;
-  }
-
-  .js .nav a[aria-current="page"] {
-    color: var(--accent);
-  }
-
-  .js .nav .nav-core {
-    justify-content: space-between;
-    margin-top: 2rem;
-    border: 1px solid var(--ink);
-    padding: 1rem 1.25rem;
-    font-family: var(--font-body);
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    padding: 0.9rem 0;
     font-size: 17px;
   }
 
-  .menu-open body {
-    overflow: hidden;
-  }
-}
-
-@keyframes menu-in {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-}
-
-@media (max-width: 599px) {
-  body {
-    font-size: 16px;
+  .js .nav a:hover {
+    background-color: transparent;
+    color: var(--accent);
   }
 
-  .offer-list a {
-    grid-template-columns: 2rem 1fr;
-  }
-
-  .offer-list .go {
-    display: none;
+  .subnav {
+    top: 4.5rem;
   }
 }
 
@@ -1223,24 +1353,23 @@ a:hover .arrow::after {
   *,
   *::before,
   *::after {
-    animation: none !important;
     transition: none !important;
   }
 }
 
 @media print {
-  .topbar,
+  .header,
+  .subnav,
   .skip,
-  .hero .actions,
+  .hero .buttons,
   .hero-bg,
-  .hero::after,
-  .band::before {
+  .hero::after {
     display: none;
   }
 
   .hero,
-  .band,
-  .footer {
+  .footer,
+  .cta-box {
     background: none;
     color: black;
   }

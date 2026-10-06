@@ -18,23 +18,18 @@
     <link rel="canonical" href="https://ogtech.no/co2-besparelse/" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/ikon-32.png" />
     <link rel="apple-touch-icon" href="../assets/ikon-180.png" />
-    <meta name="theme-color" content="#eef3f2" />
-    <link rel="preload" href="../fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1821" media="(prefers-color-scheme: dark)" />
+    <link rel="preload" href="../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>
       document.documentElement.classList.add("js");
-      // Lys/mørk modus valgt med knappen i topplinjen. Settes her så siden ikke blinker.
-      try {
-        var tema = localStorage.getItem("tema");
-        if (tema === "light" || tema === "dark") document.documentElement.dataset.theme = tema;
-      } catch (e) {}
     </script>
   </head>
   <body>
     <a class="skip" href="#innhold">Hopp til innholdet</a>
-    <header class="topbar">
-      <div class="wrap">
+    <header class="header">
+      <div class="container">
         <a class="logo" href="../index.html" aria-label="Ogtech – til forsiden">
           <img class="logo-light" src="../assets/logo.png" alt="Ogtech" width="400" height="84" />
           <img class="logo-dark" src="../assets/logo-mork.png" alt="Ogtech" width="400" height="84" />
@@ -44,67 +39,74 @@
           <a href="../index.html#om-oss">Om oss</a>
           <a href="../co2-besparelse/index.html" aria-current="page">CO2-besparelse</a>
           <a href="../kontakt/index.html">Kontakt</a>
-          <a class="nav-core out" href="https://core.ogtech.no/auth">Ogtech Core</a>
+          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
-        <button class="icon-btn theme-toggle" type="button" aria-label="Bytt til mørk modus">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
-            <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
-          </svg>
-        </button>
-        <button class="icon-btn menu-toggle" type="button" aria-controls="meny" aria-expanded="false">
-          <span class="menu-text">Meny</span><span class="bars" aria-hidden="true"></span>
+        <a class="btn" href="../kontakt/index.html">Be om tilbud</a>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
+          <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
       </div>
     </header>
 
     <main id="innhold">
-      <section class="page-head">
-        <div class="wrap">
-          <div class="row half">
-            <div>
-              <p class="label"><span class="num">CO2-besparelse</span><span>Kun i transportleddet</span></p>
-              <h1>Regn ut hvor mye klimagass&shy;utslipp du kan <em>unngå</em></h1>
-              <p class="lead">
-                Se hvor mye CO2 du kan spare klimaet for årlig, kun i transportleddet.
-              </p>
-              <div class="note">
-                <p>
-                  Legg inn avstanden fra oksygenprodusenten til ditt anlegg, og få et anslag på
-                  hvor mange vogntog som kreves, og hvor mye klimautslipp som unngås.
-                </p>
-                <p>
-                  Beregningene er basert på at et vogntog i gjennomsnitt kjører med 15 000 kg
-                  oksygen per leveranse, og at vogntoget kjører tur/retur. Faktoren til distansen
-                  er derfor beregnet til 1,5.
-                </p>
-              </div>
-            </div>
-            <div>
+      <section class="page-header">
+        <div class="container">
+          <ol class="breadcrumb">
+            <li><a href="../index.html">Forside</a></li>
+            <li aria-current="page">CO2-besparelse</li>
+          </ol>
+          <h1>Regn ut hvor mye klimagassutslipp du kan unngå</h1>
+          <p class="lead">Se hvor mye CO2 du kan spare klimaet for årlig, kun i transportleddet.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="split top wide-text">
+            <div class="panel">
+              <h2>Kalkulator</h2>
               <form class="calc-form" id="calc" novalidate>
                 <label>
-                  <span>Distanse fra fabrikken til oppdrettsanlegget (km)</span>
-                  <input type="number" id="distance" min="0" inputmode="decimal" placeholder="0 km" />
+                  Distanse fra fabrikken til oppdrettsanlegget (km)
+                  <input type="number" id="distance" min="0" inputmode="decimal" placeholder="For eksempel 250" />
                 </label>
                 <label>
-                  <span>Årlig oksygenforbruk (kg)</span>
-                  <input type="number" id="annualConsumption" min="0" inputmode="decimal" placeholder="0 kg" />
+                  Årlig oksygenforbruk (kg)
+                  <input
+                    type="number"
+                    id="annualConsumption"
+                    min="0"
+                    inputmode="decimal"
+                    placeholder="For eksempel 300 000"
+                  />
                 </label>
-                <button class="btn arrow" type="submit">Regn ut</button>
+                <button class="btn" type="submit">Regn ut</button>
               </form>
               <p class="calc-error" id="calc-error" role="alert" hidden>
                 Vennligst oppgi positive tall for både distanse og årlig oksygenforbruk.
               </p>
-              <div class="result" aria-live="polite">
-                <div class="fact">
+              <div class="results" aria-live="polite">
+                <div class="result">
                   <b id="trucks">0</b>
                   <span>Antall nødvendige vogntog</span>
                 </div>
-                <div class="fact">
+                <div class="result">
                   <b id="co2">0 kg</b>
                   <span>Reduserte CO2-ekvivalenter</span>
                 </div>
               </div>
+            </div>
+            <div class="text">
+              <h2>Slik regner vi</h2>
+              <p>
+                Legg inn avstanden fra oksygenprodusenten til ditt anlegg, og få et anslag på hvor
+                mange vogntog som kreves, og hvor mye klimautslipp som unngås.
+              </p>
+              <ul class="method">
+                <li><span>Oksygen per vogntog</span><b>15 000 kg</b></li>
+                <li><span>Distansefaktor (tur/retur)</span><b>1,5</b></li>
+                <li><span>Utslipp per kjørte km</span><b>940 g CO2</b></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -112,36 +114,37 @@
     </main>
 
     <footer class="footer">
-      <div class="wrap">
-        <p class="footer-claim">Ekte <em>miljøteknologi</em>.</p>
-        <div class="footer-cols">
-          <div>
-            <span class="label">Kontakt</span>
-            <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
-            <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
-            <a href="tel:+4797565371">+47 975 65 371</a>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <img class="footer-logo" src="../assets/logo-mork.png" alt="Ogtech" width="400" height="84" loading="lazy" />
+            <p>Oksygenanlegg, backupsystemer og styringssystemet OgTechCore for sjøanlegg og landbasert oppdrett.</p>
           </div>
           <div>
-            <span class="label">Besøk oss</span>
+            <h2>Kontakt</h2>
+            <ul>
+              <li><a href="tel:+4797565371">+47 975 65 371</a></li>
+              <li><a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a></li>
+              <li><a href="mailto:herman@ogtech.no">herman@ogtech.no</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Besøksadresse</h2>
             <p>Kystveien 2, 4. etg<br />4841 Arendal</p>
           </div>
           <div>
-            <span class="label">Sider</span>
-            <a href="../produkter/index.html">Produkter</a>
-            <a href="../co2-besparelse/index.html">CO2-besparelse</a>
-            <a href="../kontakt/index.html">Kontakt</a>
-          </div>
-          <div>
-            <span class="label">Posisjon</span>
-            <p>58°27′N 8°46′E</p>
+            <h2>Snarveier</h2>
+            <ul>
+              <li><a href="../produkter/index.html">Produkter</a></li>
+              <li><a href="../co2-besparelse/index.html">CO2-besparelse</a></li>
+              <li><a href="../kontakt/index.html">Kontakt</a></li>
+              <li><a href="https://core.ogtech.no/auth">Ogtech Core</a></li>
+            </ul>
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© <span id="year">2026</span> OGTECH AS</span>
-          <nav aria-label="Bunnmeny">
-            <a href="../personvern/index.html">Personvern</a>
-            <a href="https://core.ogtech.no/auth">Ogtech Core</a>
-          </nav>
+          <span>© <span id="year">2026</span> OGTECH AS · Ekte miljøteknologi</span>
+          <a href="../personvern/index.html">Personvern</a>
         </div>
       </div>
     </footer>
