@@ -74,9 +74,10 @@ themeToggle.addEventListener("click", () => {
 darkQuery.addEventListener("change", showTheme);
 showTheme();
 
-// Utskrift skal alltid være i lyse farger.
+// Utskrift skal alltid være i lyse farger, og med all teksten bak «Les mer».
 let themeBeforePrint;
 window.addEventListener("beforeprint", () => {
+  document.querySelectorAll("details.readmore").forEach((d) => (d.open = true));
   themeBeforePrint = root.dataset.theme;
   root.dataset.theme = "light";
 });

@@ -577,6 +577,59 @@ a {
   background-color: var(--surface);
 }
 
+/* «Les mer»: utfyllende tekst ligger skjult til man ber om den. */
+.readmore summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.readmore summary::-webkit-details-marker {
+  display: none;
+}
+
+.readmore summary::before {
+  content: "Les mer";
+}
+
+.readmore[open] summary::before {
+  content: "Vis mindre";
+}
+
+.readmore summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.readmore[open] summary::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+.readmore summary:hover {
+  text-decoration: underline;
+}
+
+.readmore-body {
+  padding-top: 0.5rem;
+}
+
+.readmore-body > * + * {
+  margin-top: 1rem;
+}
+
+.readmore-body p {
+  color: var(--ink-soft);
+}
+
 /* ---------- Kort ---------- */
 
 .cards {
