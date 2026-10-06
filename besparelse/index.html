@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beregn CO2-besparelse – Ogtech</title>
+    <meta name="description" content="Regn ut hvor mye klimagassutslipp du kan unngå i transportleddet med lokalprodusert oksygen." />
+    <meta property="og:title" content="Beregn CO2-besparelse – Ogtech" />
+    <meta property="og:description" content="Regn ut hvor mye klimagassutslipp du kan unngå i transportleddet med lokalprodusert oksygen." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ogtech.no/besparelse/" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content="Ogtech" />
+    <meta property="og:image" content="https://ogtech.no/assets/deling.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://ogtech.no/besparelse/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/ikon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/ikon-180.png" />
+    <meta name="theme-color" content="#f8fafd" />
+    <link rel="preload" href="../fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#innhold">Hopp til innholdet</a>
+    <header class="topbar">
+      <div class="wrap">
+        <a class="logo" href="../" aria-label="Ogtech – til forsiden">
+          <img src="../assets/logo.png" alt="Ogtech" width="400" height="84" />
+        </a>
+        <nav class="nav" id="meny" aria-label="Hovedmeny">
+          <a href="../produkter/">Produkter</a>
+          <a href="../#om-oss">Om oss</a>
+          <a href="../besparelse/" aria-current="page">Besparelse</a>
+          <a href="../kontakt/">Kontakt</a>
+        </nav>
+        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
+        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="innhold">
+      <section>
+        <div class="wrap">
+          <div class="card wide">
+            <div class="split top">
+              <div>
+                <p class="eyebrow">Beregn CO2-besparelse</p>
+                <h1 class="title small">
+                  Regn ut hvor mye klimagassutslipp du kan unngå
+                </h1>
+                <p class="lead">
+                  Se hvor mye CO2 du kan spare klimaet for årlig, kun i transportleddet.
+                </p>
+                <details class="more">
+                  <summary></summary>
+                  <div class="more-body note">
+                    <p>
+                      Legg inn avstanden fra oksygenprodusenten til ditt anlegg, og få et anslag på
+                      hvor mange vogntog som kreves, og hvor mye klimautslipp som unngås.
+                    </p>
+                    <p>
+                      Beregningene er basert på at et vogntog i gjennomsnitt kjører med 15 000 kg
+                      oksygen per leveranse, og at vogntoget kjører tur/retur. Faktoren til
+                      distansen er derfor beregnet til 1,5.
+                    </p>
+                  </div>
+                </details>
+              </div>
+              <div>
+                <form class="calc-form" id="calc" novalidate>
+                  <label>
+                    <span>Distanse fra fabrikken til oppdrettsanlegget (km)</span>
+                    <input type="number" id="distance" min="0" inputmode="decimal" placeholder="Distanse i km" />
+                  </label>
+                  <label>
+                    <span>Årlig oksygenforbruk (kg)</span>
+                    <input
+                      type="number"
+                      id="annualConsumption"
+                      min="0"
+                      inputmode="decimal"
+                      placeholder="Årlig oksygenforbruk"
+                    />
+                  </label>
+                  <button class="btn" type="submit">Regn ut</button>
+                </form>
+                <p class="calc-error" id="calc-error" role="alert" hidden>
+                  Vennligst oppgi positive tall for både distanse og årlig oksygenforbruk.
+                </p>
+                <div class="result" aria-live="polite">
+                  <div class="stat">
+                    <b id="trucks">0</b>
+                    <span>Antall nødvendige vogntog</span>
+                  </div>
+                  <div class="stat">
+                    <b id="co2">0 kg</b>
+                    <span>Reduserte CO2-ekvivalenter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span>Copyright © <span id="year">2026</span> OGTECH · Ekte miljøteknologi</span>
+        <nav aria-label="Bunnmeny">
+          <a href="../personvern/">Personvern</a>
+          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>
