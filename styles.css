@@ -86,9 +86,14 @@
   box-sizing: border-box;
 }
 
+/* Lenker til en overskrift lander rett under den faste topplinjen (og fanemenyen på produktsiden). */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
+}
+
+html:has(.subnav) {
+  scroll-padding-top: 9.5rem;
 }
 
 body {
