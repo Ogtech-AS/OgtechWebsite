@@ -39,13 +39,9 @@
   --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E");
 }
 
-/*
- * Mørk modus. Følger innstillingen på maskinen, med mindre den besøkende har valgt selv
- * med knappen i topplinjen (da står valget i data-theme på <html>).
- * De to blokkene må være like.
- */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+/* Mørk modus følger innstillingen på maskinen. Utskrift er alltid lys. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
     color-scheme: dark;
     --bg: #0a1821;
     --bg-alt: #0e1f2b;
@@ -61,23 +57,6 @@
     --navy: #061119;
     --danger: #ff8a6b;
   }
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #0a1821;
-  --bg-alt: #0e1f2b;
-  --surface: #112634;
-  --ink: #e6eef0;
-  --ink-soft: #9db1bb;
-  --line: #22394a;
-  --brand: #5cc9bf;
-  --brand-hover: #7ad6ce;
-  --on-brand: #062028;
-  --accent: #62d2c7;
-  --accent-soft: #123a3c;
-  --navy: #061119;
-  --danger: #ff8a6b;
 }
 
 *,
@@ -271,34 +250,6 @@ a {
   margin-top: 2rem;
 }
 
-/* ---------- Infolinje øverst ---------- */
-
-.topline {
-  background-color: var(--navy);
-  color: var(--on-navy-soft);
-  font-size: 14px;
-}
-
-.topline .container {
-  display: flex;
-  min-height: 2.5rem;
-  align-items: center;
-  gap: 1.75rem;
-}
-
-.topline a {
-  color: var(--on-navy);
-  text-decoration: none;
-}
-
-.topline a:hover {
-  text-decoration: underline;
-}
-
-.topline .login {
-  margin-left: auto;
-}
-
 /* ---------- Topplinje ---------- */
 
 .header {
@@ -326,22 +277,14 @@ a {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .logo .logo-dark {
+@media screen and (prefers-color-scheme: dark) {
+  .logo .logo-dark {
     display: block;
   }
 
-  :root:not([data-theme="light"]) .logo .logo-light {
+  .logo .logo-light {
     display: none;
   }
-}
-
-:root[data-theme="dark"] .logo .logo-dark {
-  display: block;
-}
-
-:root[data-theme="dark"] .logo .logo-light {
-  display: none;
 }
 
 .nav {
@@ -366,11 +309,6 @@ a {
 
 .nav a[aria-current="page"] {
   color: var(--accent);
-}
-
-/* Ogtech Core ligger i infolinjen på store skjermer, og i menyen på mobil. */
-.nav .nav-mobile-only {
-  display: none;
 }
 
 .header .btn {
@@ -399,11 +337,6 @@ a {
 .icon-btn svg {
   width: 1.2rem;
   height: 1.2rem;
-}
-
-/* Knappen trenger JavaScript, så den vises bare når det kjører. */
-.js .theme-toggle {
-  display: flex;
 }
 
 .menu-toggle .bars {
@@ -693,6 +626,88 @@ a {
   padding-top: 0.5rem;
 }
 
+/* Hovedproduktet: bredt kort med bilde ved siden av teksten på store skjermer. */
+.card.feature {
+  margin-bottom: 1.25rem;
+}
+
+.card.feature .card-body {
+  justify-content: center;
+}
+
+.card.feature h3 {
+  font-size: 1.5rem;
+}
+
+.card.feature .more {
+  margin-top: 0.5rem;
+}
+
+.shot img {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* Mal for referanser (ligger skjult på forsiden til den er fylt ut). */
+.quote {
+  margin: 0;
+}
+
+.quote blockquote {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.quote figcaption {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  margin-top: 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.logos img {
+  width: auto;
+  height: 40px;
+}
+
+/* Mal for «Slik jobber vi» (ligger skjult på forsiden til stegene er bekreftet). */
+.steps {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: steg;
+}
+
+.steps li {
+  display: grid;
+  gap: 0.35rem;
+  border-top: 2px solid var(--accent);
+  padding-top: 1rem;
+  counter-increment: steg;
+}
+
+.steps li::before {
+  content: "Steg " counter(steg);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.steps span {
+  color: var(--ink-soft);
+}
+
 /* ---------- Sjekkliste ---------- */
 
 .checklist {
@@ -770,6 +785,31 @@ a {
 
 .cta-box .buttons {
   margin-top: 0;
+}
+
+.cta-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cta-contacts span {
+  display: block;
+  color: var(--on-navy-soft);
+  font-size: 14px;
+}
+
+.cta-contacts a {
+  color: var(--on-navy);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cta-contacts a:hover {
+  text-decoration: underline;
 }
 
 .cta-box .btn {
@@ -1202,6 +1242,26 @@ figcaption {
     grid-template-columns: 1fr auto;
   }
 
+  .card.feature {
+    flex-direction: row;
+  }
+
+  .card.feature .card-media {
+    flex: 0 0 50%;
+    aspect-ratio: auto;
+    min-height: 18rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .card.feature .card-body {
+    padding: 2.5rem;
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .screens.stack {
     grid-template-columns: 1fr;
   }
@@ -1214,10 +1274,6 @@ figcaption {
 /* ---------- Mobil og nettbrett ---------- */
 
 @media (max-width: 959px) {
-  .topline .hide-small {
-    display: none;
-  }
-
   .header .container {
     gap: 0.5rem;
   }
@@ -1230,7 +1286,7 @@ figcaption {
     display: flex;
   }
 
-  .theme-toggle {
+  .menu-toggle {
     margin-left: auto;
   }
 
@@ -1279,10 +1335,6 @@ figcaption {
     color: var(--accent);
   }
 
-  .js .nav .nav-mobile-only {
-    display: block;
-  }
-
   .subnav {
     top: 4.5rem;
   }
@@ -1301,7 +1353,6 @@ figcaption {
 }
 
 @media print {
-  .topline,
   .header,
   .subnav,
   .skip,

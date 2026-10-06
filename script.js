@@ -46,44 +46,9 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-// Lys/mørk modus. Uten eget valg følger siden innstillingen på maskinen;
-// trykker man på knappen, lagres valget og gjelder på alle sidene.
-const root = document.documentElement;
-const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-const themeToggle = document.querySelector(".theme-toggle");
-const themeColor = document.querySelector('meta[name="theme-color"]');
-
-function currentTheme() {
-  return root.dataset.theme || (darkQuery.matches ? "dark" : "light");
-}
-
-function showTheme() {
-  const dark = currentTheme() === "dark";
-  themeToggle.setAttribute("aria-label", dark ? "Bytt til lys modus" : "Bytt til mørk modus");
-  themeColor?.setAttribute("content", dark ? "#0a1821" : "#ffffff");
-}
-
-themeToggle.addEventListener("click", () => {
-  const theme = currentTheme() === "dark" ? "light" : "dark";
-  root.dataset.theme = theme;
-  try {
-    localStorage.setItem("tema", theme);
-  } catch {}
-  showTheme();
-});
-darkQuery.addEventListener("change", showTheme);
-showTheme();
-
-// Utskrift skal alltid være i lyse farger, og med all teksten bak «Les mer».
-let themeBeforePrint;
+// Ved utskrift skal all teksten bak «Les mer» med.
 window.addEventListener("beforeprint", () => {
   document.querySelectorAll("details.readmore").forEach((d) => (d.open = true));
-  themeBeforePrint = root.dataset.theme;
-  root.dataset.theme = "light";
-});
-window.addEventListener("afterprint", () => {
-  if (themeBeforePrint) root.dataset.theme = themeBeforePrint;
-  else delete root.dataset.theme;
 });
 
 const year = document.getElementById("year");
