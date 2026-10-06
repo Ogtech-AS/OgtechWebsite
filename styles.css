@@ -391,7 +391,7 @@ a {
 }
 
 .hero-text {
-  max-width: 38rem;
+  max-width: 50rem;
 }
 
 .hero .overline {
@@ -399,10 +399,17 @@ a {
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.75rem);
+  font-size: clamp(2.3rem, 5vw, 3.75rem);
+}
+
+/* Andre linje i hovedtittelen: samme størrelse, dempet farge. */
+.h1-sub {
+  display: block;
+  color: rgb(255 255 255 / 68%);
 }
 
 .hero p {
+  max-width: 38rem;
   margin-top: 1.25rem;
   color: rgb(255 255 255 / 85%);
   font-size: clamp(1.05rem, 1.5vw, 1.2rem);
