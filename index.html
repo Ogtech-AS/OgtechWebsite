@@ -18,9 +18,9 @@
     <link rel="canonical" href="https://ogtech.no/" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/ikon-32.png" />
     <link rel="apple-touch-icon" href="assets/ikon-180.png" />
-    <meta name="theme-color" content="#f8fafd" />
-    <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#eef3f2" />
+    <link rel="preload" href="fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
     <script>
       document.documentElement.classList.add("js");
@@ -64,25 +64,22 @@
           <a href="#om-oss">Om oss</a>
           <a href="co2-besparelse/index.html">CO2-besparelse</a>
           <a href="kontakt/index.html">Kontakt</a>
+          <a class="nav-core out" href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
-        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
-        <button class="theme-toggle" type="button" aria-label="Bytt til mørk modus">
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.5 6.5 0 0 0 11 11Z" />
-          </svg>
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        <button class="icon-btn theme-toggle" type="button" aria-label="Bytt til mørk modus">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
           </svg>
         </button>
-        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
-          <span></span><span></span><span></span>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="meny" aria-expanded="false">
+          <span class="menu-text">Meny</span><span class="bars" aria-hidden="true"></span>
         </button>
       </div>
     </header>
 
     <main id="innhold">
-      <div class="hero" id="topp">
+      <section class="hero" id="topp">
         <img
           class="hero-bg"
           src="assets/hero-laks.webp"
@@ -94,97 +91,156 @@
           fetchpriority="high"
         />
         <div class="wrap">
-          <p class="eyebrow">Ekte miljøteknologi</p>
-          <h1>Lokalprodusert oksygen</h1>
-          <a class="btn" href="produkter/index.html">Se produktene</a>
-        </div>
-      </div>
-
-      <section id="om-oss">
-        <div class="wrap">
-          <div class="split">
-            <div>
-              <p class="eyebrow">Kort om oss</p>
-              <h2 class="title">
-                La oss jobbe sammen for en mer bærekraftig og produktiv fremtid i akvakultur
-              </h2>
-              <p class="lead">
-                Velkommen til Ogtech, din foretrukne partner i akvakulturbransjen for innovative
-                oksygenløsninger.
-              </p>
-              <details class="more">
-                <summary></summary>
-                <div class="more-body">
-                  <p>
-                    Vi er stolte av å spesialisere oss i utviklingen og leveransen av avanserte
-                    oksygenproduksjonssystemer, skreddersydd for både sjøanlegg og landbasert
-                    oppdrett.
-                  </p>
-                  <p>
-                    Grunnlagt av erfarne fagfolk fra fiskeoppdrettsindustrien, og i samarbeid med
-                    eksperter innen oksygenproduksjon, representerer Ogtech en unik sammensetning
-                    av dybdekunnskap og teknologisk ekspertise. Vår kjernemisjon er å fremme
-                    fiskevelferd gjennom levering av høykvalitets oksygenløsninger, designet for å
-                    minimere energiforbruket uten å gå på kompromiss med effektiviteten. Vi
-                    tilpasser løsninger utelukkende for akvakultur.
-                  </p>
-                  <p>
-                    Våre anlegg er nøye tilpasset behovene i oppdrettsindustrien, og vi legger stor
-                    vekt på brukervennlighet og pålitelighet. Ved å velge Ogtech, velger du en
-                    partner som er dedikert til å tilby bærekraftige, effektive og
-                    kostnadsbesparende løsninger.
-                  </p>
-                </div>
-              </details>
-            </div>
-            <div class="media">
-              <img
-                src="assets/kunnskapshavna.webp"
-                srcset="assets/kunnskapshavna-640.webp 640w, assets/kunnskapshavna.webp 1280w"
-                sizes="(min-width: 720px) 30rem, 100vw"
-                alt="Kontorbygget til Ogtech på Kunnskapshavna i Arendal"
-                width="1280"
-                height="960"
-                loading="lazy"
-                decoding="async"
-              />
+          <p class="label"><span class="num">Ogtech</span><span>Ekte miljøteknologi for havbruk</span></p>
+          <h1>Lokalprodusert <em>oksygen</em></h1>
+          <div class="hero-foot">
+            <p>
+              Skreddersydde oksygenanlegg, backupsystemer og styringssystemet OgTechCore – for
+              sjøanlegg og landbasert oppdrett.
+            </p>
+            <div class="actions">
+              <a class="btn btn-light arrow" href="produkter/index.html">Se produktene</a>
+              <a class="btn btn-light btn-line" href="kontakt/index.html">Kontakt oss</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="produkter" class="tight">
+      <section class="section" id="om-oss">
         <div class="wrap">
-          <div class="section-head intro">
-            <p class="eyebrow">Produkter &amp; service</p>
-            <h2>Vi skreddersyr</h2>
+          <div class="row">
+            <p class="label"><span class="num">01</span><span>Om oss</span></p>
+            <div>
+              <h2 class="statement">
+                La oss jobbe sammen for en mer bærekraftig og produktiv fremtid i
+                <em>akvakultur</em>.
+              </h2>
+              <div class="columns">
+                <p>
+                  Velkommen til Ogtech, din foretrukne partner i akvakulturbransjen for innovative
+                  oksygenløsninger. Vi er stolte av å spesialisere oss i utviklingen og leveransen
+                  av avanserte oksygenproduksjonssystemer, skreddersydd for både sjøanlegg og
+                  landbasert oppdrett.
+                </p>
+                <p>
+                  Grunnlagt av erfarne fagfolk fra fiskeoppdrettsindustrien, og i samarbeid med
+                  eksperter innen oksygenproduksjon, representerer Ogtech en unik sammensetning av
+                  dybdekunnskap og teknologisk ekspertise. Vår kjernemisjon er å fremme
+                  fiskevelferd gjennom levering av høykvalitets oksygenløsninger, designet for å
+                  minimere energiforbruket uten å gå på kompromiss med effektiviteten. Vi tilpasser
+                  løsninger utelukkende for akvakultur.
+                </p>
+                <p>
+                  Våre anlegg er nøye tilpasset behovene i oppdrettsindustrien, og vi legger stor
+                  vekt på brukervennlighet og pålitelighet. Ved å velge Ogtech, velger du en
+                  partner som er dedikert til å tilby bærekraftige, effektive og
+                  kostnadsbesparende løsninger.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="grid two">
-            <article class="card">
-              <h3><span class="dot ok"></span>Oksygenanlegg</h3>
-              <p class="lead">Spesialtilpassede oksygenanlegg</p>
-              <a class="pill" href="produkter/index.html#oksygenanlegg">Les mer</a>
-            </article>
-            <article class="card">
-              <h3><span class="dot warn"></span>Backup-system</h3>
-              <p class="lead">Backup fra oksygentank eller løsning med samme teknologi</p>
-              <a class="pill" href="produkter/index.html#backupsystem">Les mer</a>
-            </article>
-            <article class="card">
-              <h3><span class="dot info"></span>OgTechCore</h3>
-              <p class="lead">Brukervennlig styringssystem</p>
-              <a class="pill" href="produkter/index.html#ogtechcore">Les mer</a>
-            </article>
-            <article class="card">
-              <h3><span class="dot"></span>Tilpasset teknologi</h3>
-              <p class="lead">Vi leverer løsninger som fungerer sammen med LOX eller trykkflasker</p>
-              <a class="pill" href="produkter/index.html#tilpasset-teknologi">Les mer</a>
-            </article>
+          <figure class="figure wide chapter-media">
+            <img
+              src="assets/kunnskapshavna.webp"
+              srcset="assets/kunnskapshavna-640.webp 640w, assets/kunnskapshavna.webp 1280w"
+              sizes="(min-width: 82rem) 76rem, 100vw"
+              alt="Kontorbygget til Ogtech på Kunnskapshavna i Arendal"
+              width="1280"
+              height="960"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>Kontoret vårt på Kunnskapshavna</span><span>Kystveien 2, Arendal</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section tint" id="produkter">
+        <div class="wrap">
+          <div class="row">
+            <p class="label"><span class="num">02</span><span>Produkter &amp; service</span></p>
+            <h2 class="big-title">Vi <em>skreddersyr</em>.</h2>
           </div>
+          <ul class="offer-list">
+            <li>
+              <a href="produkter/index.html#oksygenanlegg">
+                <span class="num">01</span>
+                <h3>Oksygenanlegg</h3>
+                <p>Spesialtilpassede oksygenanlegg, fra 10 til 20 000 kg oksygen per døgn.</p>
+                <span class="go arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="produkter/index.html#backupsystem">
+                <span class="num">02</span>
+                <h3>Backupsystem</h3>
+                <p>Backup fra oksygentank eller løsning med samme teknologi.</p>
+                <span class="go arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="produkter/index.html#ogtechcore">
+                <span class="num">03</span>
+                <h3>OgTechCore</h3>
+                <p>Brukervennlig styringssystem. Status, trykk, temperatur, flow og renhet samlet på ett sted.</p>
+                <span class="go arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li>
+              <a href="produkter/index.html#tilpasset-teknologi">
+                <span class="num">04</span>
+                <h3>Tilpasset teknologi</h3>
+                <p>Vi leverer løsninger som fungerer sammen med LOX eller trykkflasker.</p>
+                <span class="go arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="wrap">
+          <div class="row half center">
+            <div class="stage">
+              <img
+                src="assets/oxygen600-drift.webp"
+                srcset="assets/oxygen600-drift-768.webp 768w, assets/oxygen600-drift.webp 1536w"
+                sizes="(min-width: 960px) 36rem, 100vw"
+                alt="OxyGen600 oksygenanlegg i kabinett, levert av Ogtech"
+                width="1536"
+                height="1152"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div>
+              <p class="label"><span class="num">03</span><span>Egenproduksjon</span></p>
+              <h2 class="big-title">Oksygen produsert <em>der fisken er</em>.</h2>
+              <p class="lead">
+                Egenproduksjon basert på PSA- eller VPSA-teknologi er den mest kostnadseffektive
+                løsningen for oksygen til akvakultur – og spares raskt inn sammenlignet med
+                løsninger som krever transport.
+              </p>
+              <div class="actions">
+                <a class="btn btn-light arrow" href="co2-besparelse/index.html">Beregn CO2-besparelsen</a>
+              </div>
+            </div>
+          </div>
+          <div class="facts">
+            <div class="fact"><b>10–20 000</b><span>kg oksygen per døgn</span></div>
+            <div class="fact"><b>24/7</b><span>overvåkning med varsler rett til mobilen</span></div>
+            <div class="fact"><b>1000 kVA</b><span>strømbackup med batteri, hybrid eller diesel</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div class="wrap">
+          <p class="label"><span class="num">04</span><span>Kontakt</span></p>
+          <h2>Ta gjerne kontakt for et <em>uforpliktende</em> tilbud.</h2>
           <div class="actions">
-            <a class="btn" href="produkter/index.html">Produkter</a>
-            <a class="btn btn-quiet" href="co2-besparelse/index.html">Beregn CO2-besparelse</a>
-            <a class="btn btn-quiet" href="kontakt/index.html">Kontakt oss</a>
+            <a class="btn arrow" href="kontakt/index.html">Kontakt oss</a>
+            <a class="btn btn-line" href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
           </div>
         </div>
       </section>
@@ -192,11 +248,36 @@
 
     <footer class="footer">
       <div class="wrap">
-        <span>Copyright © <span id="year">2026</span> OGTECH · Ekte miljøteknologi</span>
-        <nav aria-label="Bunnmeny">
-          <a href="personvern/index.html">Personvern</a>
-          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
-        </nav>
+        <p class="footer-claim">Ekte <em>miljøteknologi</em>.</p>
+        <div class="footer-cols">
+          <div>
+            <span class="label">Kontakt</span>
+            <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
+            <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
+            <a href="tel:+4797565371">+47 975 65 371</a>
+          </div>
+          <div>
+            <span class="label">Besøk oss</span>
+            <p>Kystveien 2, 4. etg<br />4841 Arendal</p>
+          </div>
+          <div>
+            <span class="label">Sider</span>
+            <a href="produkter/index.html">Produkter</a>
+            <a href="co2-besparelse/index.html">CO2-besparelse</a>
+            <a href="kontakt/index.html">Kontakt</a>
+          </div>
+          <div>
+            <span class="label">Posisjon</span>
+            <p>58°27′N 8°46′E</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> OGTECH AS</span>
+          <nav aria-label="Bunnmeny">
+            <a href="personvern/index.html">Personvern</a>
+            <a href="https://core.ogtech.no/auth">Ogtech Core</a>
+          </nav>
+        </div>
       </div>
     </footer>
 

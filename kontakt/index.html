@@ -18,9 +18,9 @@
     <link rel="canonical" href="https://ogtech.no/kontakt/" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/ikon-32.png" />
     <link rel="apple-touch-icon" href="../assets/ikon-180.png" />
-    <meta name="theme-color" content="#f8fafd" />
-    <link rel="preload" href="../fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#eef3f2" />
+    <link rel="preload" href="../fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>
       document.documentElement.classList.add("js");
@@ -44,83 +44,115 @@
           <a href="../index.html#om-oss">Om oss</a>
           <a href="../co2-besparelse/index.html">CO2-besparelse</a>
           <a href="../kontakt/index.html" aria-current="page">Kontakt</a>
+          <a class="nav-core out" href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
-        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
-        <button class="theme-toggle" type="button" aria-label="Bytt til mørk modus">
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.5 6.5 0 0 0 11 11Z" />
-          </svg>
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        <button class="icon-btn theme-toggle" type="button" aria-label="Bytt til mørk modus">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
           </svg>
         </button>
-        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
-          <span></span><span></span><span></span>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="meny" aria-expanded="false">
+          <span class="menu-text">Meny</span><span class="bars" aria-hidden="true"></span>
         </button>
       </div>
     </header>
 
     <main id="innhold">
-      <section>
+      <section class="page-head">
         <div class="wrap">
-          <div class="card wide">
-            <div class="split top">
-              <div>
-                <p class="eyebrow">Kontakt oss</p>
-                <h1 class="title small">
-                  Ta gjerne kontakt med oss for et uforpliktende tilbud
-                </h1>
-                <p class="lead">
-                  Det er bare å ta kontakt med oss dersom du ønsker å få et uforpliktende tilbud,
-                  eller har noen andre spørsmål.
-                </p>
-                <a class="btn spaced" href="mailto:kristian@ogtech.no">
-                  Send oss en e-post
-                </a>
-              </div>
-              <ul class="contact-list">
-                <li>
-                  <span>E-post</span>
-                  <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
-                </li>
-                <li>
-                  <span>E-post</span>
-                  <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
-                </li>
-                <li>
-                  <span>Telefon</span>
-                  <a href="tel:+4797565371">+47 975 65 371</a>
-                </li>
-                <li>
-                  <span>Adresse</span>
-                  <a
-                    href="https://www.google.no/maps/place/Kystveien+2,+4007+Arendal/@58.4593699,8.7721611,17z/data=!4m5!3m4!1s0x464794de1440d757:0x3da32cdbec0e86bb!8m2!3d58.4592998!4d8.7727405"
-                    target="_blank"
-                    rel="noopener"
-                    >Kystveien 2, 4. etg, 4841 Arendal</a
-                  >
-                </li>
-                <!-- Skjult inntil Facebook-siden er oppdatert igjen:
-                <li>
-                  <span>Sosiale medier</span>
-                  <a href="https://www.facebook.com/ogtech.NO/" target="_blank" rel="noopener">Facebook</a>
-                </li>
-                -->
-              </ul>
-            </div>
+          <p class="label"><span class="num">Kontakt oss</span><span>Arendal</span></p>
+          <h1>Ta gjerne kontakt med oss for et <em>uforpliktende</em> tilbud</h1>
+          <p class="lead">
+            Det er bare å ta kontakt med oss dersom du ønsker å få et uforpliktende tilbud, eller
+            har noen andre spørsmål.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <span>E-post</span>
+              <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
+            </li>
+            <li>
+              <span>E-post</span>
+              <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
+            </li>
+            <li>
+              <span>Telefon</span>
+              <a href="tel:+4797565371">+47 975 65 371</a>
+            </li>
+            <li>
+              <span>Adresse</span>
+              <a
+                href="https://www.google.no/maps/place/Kystveien+2,+4007+Arendal/@58.4593699,8.7721611,17z/data=!4m5!3m4!1s0x464794de1440d757:0x3da32cdbec0e86bb!8m2!3d58.4592998!4d8.7727405"
+                target="_blank"
+                rel="noopener"
+                >Kystveien 2, 4. etg, 4841 Arendal</a
+              >
+            </li>
+            <!-- Skjult inntil Facebook-siden er oppdatert igjen:
+            <li>
+              <span>Sosiale medier</span>
+              <a href="https://www.facebook.com/ogtech.NO/" target="_blank" rel="noopener">Facebook</a>
+            </li>
+            -->
+          </ul>
+          <div class="actions">
+            <a class="btn arrow" href="mailto:kristian@ogtech.no">Send oss en e-post</a>
           </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Kontoret vårt">
+        <div class="wrap">
+          <figure class="figure wide">
+            <img
+              src="../assets/kunnskapshavna.webp"
+              srcset="../assets/kunnskapshavna-640.webp 640w, ../assets/kunnskapshavna.webp 1280w"
+              sizes="(min-width: 82rem) 76rem, 100vw"
+              alt="Kontorbygget til Ogtech på Kunnskapshavna i Arendal"
+              width="1280"
+              height="960"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>Kunnskapshavna, Arendal</span><span>58°27′N 8°46′E</span></figcaption>
+          </figure>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="wrap">
-        <span>Copyright © <span id="year">2026</span> OGTECH · Ekte miljøteknologi</span>
-        <nav aria-label="Bunnmeny">
-          <a href="../personvern/index.html">Personvern</a>
-          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
-        </nav>
+        <p class="footer-claim">Ekte <em>miljøteknologi</em>.</p>
+        <div class="footer-cols">
+          <div>
+            <span class="label">Kontakt</span>
+            <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
+            <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
+            <a href="tel:+4797565371">+47 975 65 371</a>
+          </div>
+          <div>
+            <span class="label">Besøk oss</span>
+            <p>Kystveien 2, 4. etg<br />4841 Arendal</p>
+          </div>
+          <div>
+            <span class="label">Sider</span>
+            <a href="../produkter/index.html">Produkter</a>
+            <a href="../co2-besparelse/index.html">CO2-besparelse</a>
+            <a href="../kontakt/index.html">Kontakt</a>
+          </div>
+          <div>
+            <span class="label">Posisjon</span>
+            <p>58°27′N 8°46′E</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> OGTECH AS</span>
+          <nav aria-label="Bunnmeny">
+            <a href="../personvern/index.html">Personvern</a>
+            <a href="https://core.ogtech.no/auth">Ogtech Core</a>
+          </nav>
+        </div>
       </div>
     </footer>
 
