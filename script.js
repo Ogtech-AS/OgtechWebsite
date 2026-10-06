@@ -9,7 +9,7 @@ const form = document.getElementById("calc");
 const error = document.getElementById("calc-error");
 const format = new Intl.NumberFormat("nb-NO", { maximumFractionDigits: 3 });
 
-form.addEventListener("submit", (event) => {
+form?.addEventListener("submit", (event) => {
   event.preventDefault();
   const distance = Number(document.getElementById("distance").value);
   const consumption = Number(document.getElementById("annualConsumption").value);
@@ -25,4 +25,24 @@ form.addEventListener("submit", (event) => {
   document.getElementById("co2").textContent = `${format.format(co2)} kg`;
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// Mobilmenyen: knappen åpner/lukker lenkene, og et valg i menyen lukker den igjen.
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.getElementById("meny");
+
+function setMenu(open) {
+  menu.classList.toggle("open", open);
+  toggle.setAttribute("aria-expanded", String(open));
+}
+
+toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+menu.addEventListener("click", (event) => {
+  if (event.target.closest("a")) setMenu(false);
+});
+
+// Ved utskrift skal all teksten med, også den bak «Les mer».
+window.addEventListener("beforeprint", () => {
+  document.querySelectorAll("details.more").forEach((d) => (d.open = true));
+});
+
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();

@@ -14,33 +14,75 @@
       content="Skreddersydde oksygenanlegg, backupsystemer og styringssystem for akvakultur."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/hero-laks.jpg" />
-    <link rel="icon" type="image/png" href="assets/ikon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    />
+    <meta property="og:url" content="https://ogtech.no/" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content="Ogtech" />
+    <meta property="og:image" content="https://ogtech.no/assets/deling.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://ogtech.no/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/ikon-32.png" />
+    <link rel="apple-touch-icon" href="assets/ikon-180.png" />
+    <meta name="theme-color" content="#f8fafd" />
+    <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ogtech",
+        "legalName": "OGTECH AS",
+        "url": "https://ogtech.no/",
+        "logo": "https://ogtech.no/assets/logo.png",
+        "slogan": "Ekte miljøteknologi",
+        "email": "kristian@ogtech.no",
+        "telephone": "+47 975 65 371",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kystveien 2, 4. etg",
+          "postalCode": "4841",
+          "addressLocality": "Arendal",
+          "addressCountry": "NO"
+        }
+      }
+    </script>
   </head>
   <body>
+    <a class="skip" href="#innhold">Hopp til innholdet</a>
     <header class="topbar">
       <div class="wrap">
         <a class="logo" href="#topp" aria-label="Ogtech – til toppen">
-          <img src="assets/logo.png" alt="Ogtech" width="1024" height="215" />
+          <img src="assets/logo.png" alt="Ogtech" width="400" height="84" />
         </a>
-        <nav class="nav" aria-label="Hovedmeny">
+        <nav class="nav" id="meny" aria-label="Hovedmeny">
           <a href="#produkter">Produkter</a>
           <a href="#om-oss">Om oss</a>
           <a href="#kontakt">Kontakt</a>
-          <a class="btn" href="https://core.ogtech.no/auth">Logg inn</a>
         </nav>
+        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
+        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
 
-    <main id="topp">
-      <div class="hero">
+    <main id="innhold">
+      <div class="hero" id="topp">
+        <img
+          class="hero-bg"
+          src="assets/hero-laks.webp"
+          srcset="assets/hero-laks-800.webp 800w, assets/hero-laks.webp 1600w"
+          sizes="100vw"
+          alt=""
+          width="1600"
+          height="1200"
+          fetchpriority="high"
+        />
         <div class="wrap">
           <p class="eyebrow">Ekte miljøteknologi</p>
           <h1>Lokalprodusert oksygen</h1>
@@ -54,10 +96,10 @@
           <div class="split">
             <div>
               <p class="eyebrow">Kort om oss</p>
-              <h2 style="margin-top: 0.5rem; font-size: clamp(1.6rem, 3.6vw, 2.25rem)">
+              <h2 class="title">
                 La oss jobbe sammen for en mer bærekraftig og produktiv fremtid i akvakultur
               </h2>
-              <p class="soft" style="margin-top: 1rem">
+              <p class="lead">
                 Velkommen til Ogtech, din foretrukne partner i akvakulturbransjen for innovative
                 oksygenløsninger.
               </p>
@@ -88,11 +130,14 @@
             </div>
             <div class="media">
               <img
-                src="assets/kunnskapshavna.jpeg"
+                src="assets/kunnskapshavna.webp"
+                srcset="assets/kunnskapshavna-640.webp 640w, assets/kunnskapshavna.webp 1280w"
+                sizes="(min-width: 720px) 30rem, 100vw"
                 alt="Kontorbygget til Ogtech på Kunnskapshavna i Arendal"
-                width="2560"
-                height="1920"
+                width="1280"
+                height="960"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -100,10 +145,10 @@
       </section>
 
       <!-- Produkter -->
-      <section id="produkter" style="padding-top: 0">
+      <section id="produkter" class="tight">
         <div class="wrap">
-          <div class="split flip" style="margin-bottom: 2rem">
-            <div class="section-head" style="margin-bottom: 0">
+          <div class="split flip intro">
+            <div class="section-head">
               <p class="eyebrow">Produkter &amp; service</p>
               <h2>Lavere oksygenpris, energibesparende og sikker oksygentilgang</h2>
               <p>Våre oksygenløsninger er skreddersydd for akvakulturindustrien.</p>
@@ -123,10 +168,13 @@
             <div class="media plain">
               <img
                 src="assets/oxygen600-drift.webp"
+                srcset="assets/oxygen600-drift-768.webp 768w, assets/oxygen600-drift.webp 1536w"
+                sizes="(min-width: 720px) 30rem, 100vw"
                 alt="OxyGen600 oksygenanlegg i kabinett, levert av Ogtech"
                 width="1536"
                 height="1152"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -167,6 +215,7 @@
                   width="1024"
                   height="640"
                   loading="lazy"
+                decoding="async"
                 />
               </div>
             </div>
@@ -199,11 +248,11 @@
             </article>
           </div>
 
-          <article class="card wide" id="ogtechcore" style="margin-top: 1rem">
+          <article class="card wide" id="ogtechcore">
             <div class="split">
               <div>
                 <p class="eyebrow">Styring og automasjon</p>
-                <h3 style="margin-top: 0.5rem"><span class="dot info"></span>OgTechCore</h3>
+                <h3><span class="dot info"></span>OgTechCore</h3>
                 <p class="lead">
                   Brukervennlig styringssystem. Status, trykk, temperatur, flow og renhet samlet
                   på ett sted.
@@ -242,18 +291,20 @@
               </div>
               <div class="shots">
                 <img
-                  src="assets/core-noekkeltall.jpg"
+                  src="assets/core-noekkeltall.webp"
                   alt="OgTechCore dashboard med nøkkeltall for oksygenanlegg"
                   width="1137"
                   height="810"
                   loading="lazy"
+                decoding="async"
                 />
                 <img
-                  src="assets/core-operations.jpg"
+                  src="assets/core-operations.webp"
                   alt="OgTechCore styringssystem – live oversikt over oksygenproduksjon"
                   width="1086"
                   height="812"
                   loading="lazy"
+                decoding="async"
                 />
               </div>
             </div>
@@ -262,15 +313,15 @@
       </section>
 
       <!-- CO2-kalkulator -->
-      <section id="kalkulator" style="padding-top: 0">
+      <section id="kalkulator" class="tight">
         <div class="wrap">
           <div class="card wide">
-            <div class="split" style="align-items: start">
+            <div class="split top">
               <div>
                 <p class="eyebrow">Beregn CO2-besparelse</p>
-                <h3 style="margin-top: 0.5rem; font-size: 22px">
+                <h2 class="title small">
                   Regn ut hvor mye klimagassutslipp du kan unngå
-                </h3>
+                </h2>
                 <p class="lead">
                   Se hvor mye CO2 du kan spare klimaet for årlig, kun i transportleddet.
                 </p>
@@ -327,20 +378,20 @@
       </section>
 
       <!-- Kontakt -->
-      <section id="kontakt" style="padding-top: 0">
+      <section id="kontakt" class="tight">
         <div class="wrap">
           <div class="card wide">
-            <div class="split" style="align-items: start">
+            <div class="split top">
               <div>
                 <p class="eyebrow">Kontakt oss</p>
-                <h3 style="margin-top: 0.5rem; font-size: 22px">
+                <h2 class="title small">
                   Ta gjerne kontakt med oss for et uforpliktende tilbud
-                </h3>
+                </h2>
                 <p class="lead">
                   Det er bare å ta kontakt med oss dersom du ønsker å få et uforpliktende tilbud,
                   eller har noen andre spørsmål.
                 </p>
-                <a class="btn" style="margin-top: 1.25rem" href="mailto:kristian@ogtech.no">
+                <a class="btn spaced" href="mailto:kristian@ogtech.no">
                   Send oss en e-post
                 </a>
               </div>
@@ -384,11 +435,11 @@
         <span>Copyright © <span id="year">2026</span> OGTECH · Ekte miljøteknologi</span>
         <nav aria-label="Bunnmeny">
           <a href="personvern.html">Personvern</a>
-          <a href="https://core.ogtech.no/auth">Logg inn i OgTech Core</a>
+          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

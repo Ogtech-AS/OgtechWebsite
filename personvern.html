@@ -5,36 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Personvern – Ogtech</title>
     <meta name="description" content="Personvernerklæring for ogtech.no." />
-    <link rel="icon" type="image/png" href="assets/ikon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/ikon-32.png" />
+    <link rel="apple-touch-icon" href="assets/ikon-180.png" />
+    <meta name="theme-color" content="#f8fafd" />
+    <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="canonical" href="https://ogtech.no/personvern.html" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
   </head>
   <body>
+    <a class="skip" href="#innhold">Hopp til innholdet</a>
     <header class="topbar">
       <div class="wrap">
         <a class="logo" href="index.html" aria-label="Ogtech – til forsiden">
-          <img src="assets/logo.png" alt="Ogtech" width="1024" height="215" />
+          <img src="assets/logo.png" alt="Ogtech" width="400" height="84" />
         </a>
-        <nav class="nav" aria-label="Hovedmeny">
+        <nav class="nav" id="meny" aria-label="Hovedmeny">
           <a href="index.html#produkter">Produkter</a>
           <a href="index.html#om-oss">Om oss</a>
           <a href="index.html#kontakt">Kontakt</a>
-          <a class="btn" href="https://core.ogtech.no/auth">Logg inn</a>
         </nav>
+        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
+        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
 
-    <main>
+    <main id="innhold">
       <section>
         <div class="wrap">
           <div class="prose">
             <p class="eyebrow">Ogtech</p>
-            <h1 style="margin-top: 0.5rem">Personvern</h1>
+            <h1>Personvern</h1>
             <p>
               OGTECH AS er behandlingsansvarlig for behandlingen av personopplysninger som
               beskrevet i denne personvernerklæringen. I denne personvernerklæringen forklarer vi
@@ -139,9 +145,10 @@
         <span>Copyright © 2026 OGTECH · Ekte miljøteknologi</span>
         <nav aria-label="Bunnmeny">
           <a href="index.html">Forsiden</a>
-          <a href="https://core.ogtech.no/auth">Logg inn i OgTech Core</a>
+          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
       </div>
     </footer>
+    <script src="script.js" defer></script>
   </body>
 </html>
