@@ -75,6 +75,11 @@ html:has(.subnav) {
   scroll-padding-top: 9.5rem;
 }
 
+/* Litt luft over målet også når det er en ramme rundt siden som scroller. */
+[id] {
+  scroll-margin-top: 1rem;
+}
+
 body {
   margin: 0;
   background-color: var(--bg);

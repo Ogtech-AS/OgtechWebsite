@@ -51,5 +51,31 @@ window.addEventListener("beforeprint", () => {
   document.querySelectorAll("details.readmore").forEach((d) => (d.open = true));
 });
 
+// Når siden vises inne i en ramme (for eksempel en forhåndsvisning), er det rammen rundt som
+// scroller, ikke siden selv. Da hopper ikke nettleseren til riktig sted av seg selv, så vi
+// flytter visningen hit: til målet i lenken (#om-oss osv.), eller til toppen av en ny side.
+if (window.self !== window.top) {
+  const targetOf = (hash) => {
+    try {
+      return hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    } catch {
+      return null;
+    }
+  };
+  const showStart = () => (targetOf(location.hash) || document.body).scrollIntoView({ block: "start" });
+
+  showStart();
+  window.addEventListener("load", showStart, { once: true });
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    const target = link && targetOf(link.getAttribute("href"));
+    if (!target) return;
+    event.preventDefault();
+    history.replaceState(null, "", link.getAttribute("href"));
+    target.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+}
+
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
