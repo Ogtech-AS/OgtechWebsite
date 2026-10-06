@@ -18,9 +18,9 @@
     <link rel="canonical" href="https://ogtech.no/produkter/" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/ikon-32.png" />
     <link rel="apple-touch-icon" href="../assets/ikon-180.png" />
-    <meta name="theme-color" content="#f8fafd" />
-    <link rel="preload" href="../fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#eef3f2" />
+    <link rel="preload" href="../fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>
       document.documentElement.classList.add("js");
@@ -44,192 +44,189 @@
           <a href="../index.html#om-oss">Om oss</a>
           <a href="../co2-besparelse/index.html">CO2-besparelse</a>
           <a href="../kontakt/index.html">Kontakt</a>
+          <a class="nav-core out" href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
-        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
-        <button class="theme-toggle" type="button" aria-label="Bytt til mørk modus">
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.5 6.5 0 0 0 11 11Z" />
-          </svg>
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        <button class="icon-btn theme-toggle" type="button" aria-label="Bytt til mørk modus">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
           </svg>
         </button>
-        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
-          <span></span><span></span><span></span>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="meny" aria-expanded="false">
+          <span class="menu-text">Meny</span><span class="bars" aria-hidden="true"></span>
         </button>
       </div>
     </header>
 
     <main id="innhold">
-      <section>
+      <section class="page-head">
         <div class="wrap">
-          <div class="split flip intro">
-            <div class="section-head">
-              <p class="eyebrow">Produkter &amp; service</p>
-              <h1>Lavere oksygenpris, energibesparende og sikker oksygentilgang</h1>
-              <p>Våre oksygenløsninger er skreddersydd for akvakulturindustrien.</p>
-              <details class="more">
-                <summary></summary>
-                <div class="more-body">
-                  <p>
-                    Systemene er designet for å møte de spesifikke behovene til akvakultur, med
-                    muligheter for både presis oksygenregulering og effektiv energigjenvinning. Vi
-                    tilbyr fleksible løsninger som kan tilpasses nøyaktig etter våre kunders ønsker
-                    og krav, sikrer optimal driftseffektivitet og bidrar til bærekraftig vekst i
-                    din virksomhet.
-                  </p>
-                </div>
-              </details>
-            </div>
-            <div class="media plain">
-              <img
-                src="../assets/oxygen600-drift.webp"
-                srcset="../assets/oxygen600-drift-768.webp 768w, ../assets/oxygen600-drift.webp 1536w"
-                sizes="(min-width: 720px) 30rem, 100vw"
-                alt="OxyGen600 oksygenanlegg i kabinett, levert av Ogtech"
-                width="1536"
-                height="1152"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </div>
+          <p class="label"><span class="num">Produkter &amp; service</span><span>For sjøanlegg og landbasert oppdrett</span></p>
+          <h1>Lavere oksygenpris, energibesparende og <em>sikker</em> oksygentilgang</h1>
+          <p class="lead">
+            Våre oksygenløsninger er skreddersydd for akvakulturindustrien. Systemene er designet for
+            å møte de spesifikke behovene til akvakultur, med muligheter for både presis
+            oksygenregulering og effektiv energigjenvinning.
+          </p>
+        </div>
+      </section>
 
-          <article class="card wide" id="oksygenanlegg">
-            <div class="split">
+      <div class="wrap">
+        <figure class="figure">
+          <div class="stage">
+            <img
+              src="../assets/oxygen600-drift.webp"
+              srcset="../assets/oxygen600-drift-768.webp 768w, ../assets/oxygen600-drift.webp 1536w"
+              sizes="(min-width: 82rem) 60rem, 90vw"
+              alt="OxyGen600 oksygenanlegg i kabinett, levert av Ogtech"
+              width="1536"
+              height="1152"
+              fetchpriority="high"
+            />
+          </div>
+          <figcaption>
+            <span>OxyGen600 i kabinett</span>
+            <span>Fleksible løsninger, tilpasset hver enkelt kunde</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <section class="section">
+        <div class="wrap">
+          <article class="chapter first" id="oksygenanlegg">
+            <div class="row">
+              <p class="label sticky"><span class="num">01</span><span>Produksjon</span></p>
               <div>
-                <h2><span class="dot ok"></span>Oksygenanlegg</h2>
+                <h2>Oksygenanlegg</h2>
                 <p class="lead">Spesialtilpassede oksygenanlegg, fra 10 til 20 000 kg oksygen per døgn.</p>
-                <details class="more">
-                  <summary></summary>
-                  <div class="more-body">
-                    <p>
-                      Egenproduksjon av oksygen basert på PSA eller VPSA teknologi er den mest
-                      kostnadseffektive løsningen for oksygen til akvakultur. Produksjonsanlegg
-                      installert i kundens lokaler eller i container/kabinett tilknyttet
-                      fiskeproduksjonen, vil raskt spares inn, sammenlignet med løsninger som
-                      krever transport.
-                    </p>
-                    <p>
-                      Ogtech tilbyr både løsninger basert på PSA og VPSA teknologi fra 10 – 20 000
-                      kg oksygen pr. døgn. I våre applikasjoner bruker vi løsninger som er
-                      driftssikre og samtidig gir lave livsløpskostnader pr. produserte kg oksygen.
-                      Atlas Copcos patenterte teknologi og egne løsninger, gir oss fordeler
-                      sammenlignet med konkurrenter.
-                    </p>
-                    <p>
-                      Våre systemer er tilpasset akvakultur. Løsningen kan tilbys med
-                      oksygenregulering og energigjenvinning. Alt etter kundens ønsker og behov.
-                    </p>
-                  </div>
-                </details>
-              </div>
-              <div class="media plain">
-                <img
-                  src="../assets/oxygen600-3d.webp"
-                  alt="Ogtech sin 3D-modell av en kompakt og effektiv oksygengenerator"
-                  width="1024"
-                  height="640"
-                  loading="lazy"
-                decoding="async"
-                />
-              </div>
-            </div>
-          </article>
-
-          <div class="grid two">
-            <article class="card" id="backupsystem">
-              <h2><span class="dot warn"></span>Backupsystem</h2>
-              <p class="lead">Backup fra oksygentank eller løsning med samme teknologi.</p>
-              <details class="more">
-                <summary></summary>
-                <div class="more-body">
+                <div class="prose-text">
                   <p>
-                    I en verden der driftstans ikke er et alternativ, kan vi sikre kontinuerlig
-                    drift med våre kompakte og kraftige backup-løsninger, kompatible med LOX og
-                    trykkflasker. Våre løsninger er støttet av avansert teknologi og garanterer
-                    pålitelighet under strømbrudd med et spekter av strømbackup-alternativer som
-                    inkluderer batteri, hybrid og diesel. Løsningene er tilpasset ethvert behov,
-                    fra små enheter til 1000 kVA systemer.
+                    Egenproduksjon av oksygen basert på PSA eller VPSA teknologi er den mest
+                    kostnadseffektive løsningen for oksygen til akvakultur. Produksjonsanlegg
+                    installert i kundens lokaler eller i container/kabinett tilknyttet
+                    fiskeproduksjonen, vil raskt spares inn, sammenlignet med løsninger som krever
+                    transport.
+                  </p>
+                  <p>
+                    Ogtech tilbyr både løsninger basert på PSA og VPSA teknologi fra 10 – 20 000 kg
+                    oksygen pr. døgn. I våre applikasjoner bruker vi løsninger som er driftssikre og
+                    samtidig gir lave livsløpskostnader pr. produserte kg oksygen. Atlas Copcos
+                    patenterte teknologi og egne løsninger, gir oss fordeler sammenlignet med
+                    konkurrenter.
+                  </p>
+                  <p>
+                    Våre systemer er tilpasset akvakultur. Løsningen kan tilbys med
+                    oksygenregulering og energigjenvinning. Alt etter kundens ønsker og behov.
                   </p>
                 </div>
-              </details>
-            </article>
-
-            <article class="card" id="tilpasset-teknologi">
-              <h2><span class="dot"></span>Tilpasset teknologi</h2>
-              <p class="lead">
-                Vi leverer løsninger som fungerer sammen med LOX eller trykkflasker.
-              </p>
-            </article>
-          </div>
-
-          <article class="card wide" id="ogtechcore">
-            <div class="split">
-              <div>
-                <p class="eyebrow">Styring og automasjon</p>
-                <h2><span class="dot info"></span>OgTechCore</h2>
-                <p class="lead">
-                  Brukervennlig styringssystem. Status, trykk, temperatur, flow og renhet samlet
-                  på ett sted.
-                </p>
-                <details class="more">
-                  <summary></summary>
-                  <div class="more-body">
-                    <p>
-                      En forutsetning for lang levetid på oksygenanleggene og uproblematisk drift,
-                      er gode rutiner for service og vedlikehold. Sensorer og analyser av samlede
-                      data vil sammen med kommunikasjonssystemer være standardutrustning i våre
-                      anlegg. Dette sikrer en 24/7 overvåkning, der feilmeldinger sendes automatisk
-                      til driftsoperatørens mobiltelefon og andre foretrukne måter.
-                    </p>
-                    <h3>Styringssystemet</h3>
-                    <p>
-                      Med OgTechCore får operatøren fullstendig oversikt over status, trykk,
-                      temperatur, flow og renhet samlet på ett sted. Tydelige nøkkeltall gjør avvik
-                      enkelt observerbare og raskt løsbare, og all data og alle varsler lagres og
-                      er tilgjengelig utenfor maskinrommet via 4G/5G.
-                    </p>
-                    <p>
-                      Systemet guider operatøren gjennom relevante valg for start, pause,
-                      gjenopptak og stopp basert på anleggets aktuelle status. Stegvis oppstart og
-                      nedstengning leder brukeren trygt gjennom prosessen og minimerer risikoen for
-                      feil. Betingelser kontrolleres automatisk før hver handling, slik at driften
-                      blir enklere, sikrere og mer konsistent – og der avanserte innstillinger
-                      kreves, bistår vi direkte via remote control.
-                    </p>
-                    <p>
-                      OgTechCore er utviklet for å tilby en helhetlig driftsløsning som krever null
-                      forkunnskaper og minimalt med opplæring.
-                    </p>
-                  </div>
-                </details>
-              </div>
-              <div class="shots">
-                <img
-                  src="../assets/core-noekkeltall.webp"
-                  alt="OgTechCore dashboard med nøkkeltall for oksygenanlegg"
-                  width="1137"
-                  height="810"
-                  loading="lazy"
-                decoding="async"
-                />
-                <img
-                  src="../assets/core-operations.webp"
-                  alt="OgTechCore styringssystem – live oversikt over oksygenproduksjon"
-                  width="1086"
-                  height="812"
-                  loading="lazy"
-                decoding="async"
-                />
+                <div class="stage chapter-media">
+                  <img
+                    src="../assets/oxygen600-3d.webp"
+                    alt="Ogtech sin 3D-modell av en kompakt og effektiv oksygengenerator"
+                    width="1024"
+                    height="640"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
             </div>
           </article>
 
-          <div class="card wide cta">
-            <h2>Ta gjerne kontakt med oss for et uforpliktende tilbud</h2>
-            <a class="btn" href="../kontakt/index.html">Kontakt oss</a>
+          <div class="pair">
+            <article class="chapter" id="backupsystem">
+              <p class="label"><span class="num">02</span><span>Sikkerhet</span></p>
+              <h2>Backupsystem</h2>
+              <p class="lead">Backup fra oksygentank eller løsning med samme teknologi.</p>
+              <div class="prose-text">
+                <p>
+                  I en verden der driftstans ikke er et alternativ, kan vi sikre kontinuerlig drift
+                  med våre kompakte og kraftige backup-løsninger, kompatible med LOX og
+                  trykkflasker. Våre løsninger er støttet av avansert teknologi og garanterer
+                  pålitelighet under strømbrudd med et spekter av strømbackup-alternativer som
+                  inkluderer batteri, hybrid og diesel. Løsningene er tilpasset ethvert behov, fra
+                  små enheter til 1000 kVA systemer.
+                </p>
+              </div>
+            </article>
+
+            <article class="chapter" id="tilpasset-teknologi">
+              <p class="label"><span class="num">03</span><span>Integrasjon</span></p>
+              <h2>Tilpasset teknologi</h2>
+              <p class="lead">Vi leverer løsninger som fungerer sammen med LOX eller trykkflasker.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="ogtechcore">
+        <div class="wrap">
+          <div class="row">
+            <p class="label sticky"><span class="num">04</span><span>Styring og automasjon</span></p>
+            <div>
+              <h2 class="big-title">OgTech<em>Core</em></h2>
+              <p class="lead">
+                Brukervennlig styringssystem. Status, trykk, temperatur, flow og renhet samlet på
+                ett sted.
+              </p>
+              <div class="prose-text">
+                <p>
+                  En forutsetning for lang levetid på oksygenanleggene og uproblematisk drift, er
+                  gode rutiner for service og vedlikehold. Sensorer og analyser av samlede data vil
+                  sammen med kommunikasjonssystemer være standardutrustning i våre anlegg. Dette
+                  sikrer en 24/7 overvåkning, der feilmeldinger sendes automatisk til
+                  driftsoperatørens mobiltelefon og andre foretrukne måter.
+                </p>
+                <h3>Styringssystemet</h3>
+                <p>
+                  Med OgTechCore får operatøren fullstendig oversikt over status, trykk,
+                  temperatur, flow og renhet samlet på ett sted. Tydelige nøkkeltall gjør avvik
+                  enkelt observerbare og raskt løsbare, og all data og alle varsler lagres og er
+                  tilgjengelig utenfor maskinrommet via 4G/5G.
+                </p>
+                <p>
+                  Systemet guider operatøren gjennom relevante valg for start, pause, gjenopptak og
+                  stopp basert på anleggets aktuelle status. Stegvis oppstart og nedstengning leder
+                  brukeren trygt gjennom prosessen og minimerer risikoen for feil. Betingelser
+                  kontrolleres automatisk før hver handling, slik at driften blir enklere, sikrere
+                  og mer konsistent – og der avanserte innstillinger kreves, bistår vi direkte via
+                  remote control.
+                </p>
+                <p>
+                  OgTechCore er utviklet for å tilby en helhetlig driftsløsning som krever null
+                  forkunnskaper og minimalt med opplæring.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="shots">
+            <img
+              src="../assets/core-noekkeltall.webp"
+              alt="OgTechCore dashboard med nøkkeltall for oksygenanlegg"
+              width="1137"
+              height="810"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src="../assets/core-operations.webp"
+              alt="OgTechCore styringssystem – live oversikt over oksygenproduksjon"
+              width="1086"
+              height="812"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div class="wrap">
+          <p class="label"><span class="num">Neste steg</span></p>
+          <h2>Ta gjerne kontakt med oss for et <em>uforpliktende</em> tilbud.</h2>
+          <div class="actions">
+            <a class="btn arrow" href="../kontakt/index.html">Kontakt oss</a>
+            <a class="btn btn-line" href="../co2-besparelse/index.html">Beregn CO2-besparelse</a>
           </div>
         </div>
       </section>
@@ -237,11 +234,36 @@
 
     <footer class="footer">
       <div class="wrap">
-        <span>Copyright © <span id="year">2026</span> OGTECH · Ekte miljøteknologi</span>
-        <nav aria-label="Bunnmeny">
-          <a href="../personvern/index.html">Personvern</a>
-          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
-        </nav>
+        <p class="footer-claim">Ekte <em>miljøteknologi</em>.</p>
+        <div class="footer-cols">
+          <div>
+            <span class="label">Kontakt</span>
+            <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
+            <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
+            <a href="tel:+4797565371">+47 975 65 371</a>
+          </div>
+          <div>
+            <span class="label">Besøk oss</span>
+            <p>Kystveien 2, 4. etg<br />4841 Arendal</p>
+          </div>
+          <div>
+            <span class="label">Sider</span>
+            <a href="../produkter/index.html">Produkter</a>
+            <a href="../co2-besparelse/index.html">CO2-besparelse</a>
+            <a href="../kontakt/index.html">Kontakt</a>
+          </div>
+          <div>
+            <span class="label">Posisjon</span>
+            <p>58°27′N 8°46′E</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> OGTECH AS</span>
+          <nav aria-label="Bunnmeny">
+            <a href="../personvern/index.html">Personvern</a>
+            <a href="https://core.ogtech.no/auth">Ogtech Core</a>
+          </nav>
+        </div>
       </div>
     </footer>
 

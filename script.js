@@ -25,18 +25,27 @@ form?.addEventListener("submit", (event) => {
   document.getElementById("co2").textContent = `${format.format(co2)} kg`;
 });
 
-// Mobilmenyen: knappen åpner/lukker lenkene, og et valg i menyen lukker den igjen.
+// Mobilmenyen: knappen åpner/lukker menylaget, og et valg i menyen eller Esc lukker det igjen.
 const toggle = document.querySelector(".menu-toggle");
+const toggleText = toggle.querySelector(".menu-text");
 const menu = document.getElementById("meny");
 
 function setMenu(open) {
   menu.classList.toggle("open", open);
+  document.documentElement.classList.toggle("menu-open", open);
   toggle.setAttribute("aria-expanded", String(open));
+  toggleText.textContent = open ? "Lukk" : "Meny";
 }
 
 toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
 menu.addEventListener("click", (event) => {
   if (event.target.closest("a")) setMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menu.classList.contains("open")) {
+    setMenu(false);
+    toggle.focus();
+  }
 });
 
 // Lys/mørk modus. Uten eget valg følger siden innstillingen på maskinen;
@@ -53,7 +62,7 @@ function currentTheme() {
 function showTheme() {
   const dark = currentTheme() === "dark";
   themeToggle.setAttribute("aria-label", dark ? "Bytt til lys modus" : "Bytt til mørk modus");
-  themeColor?.setAttribute("content", dark ? "#171e2b" : "#f8fafd");
+  themeColor?.setAttribute("content", dark ? "#08161f" : "#eef3f2");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -67,10 +76,9 @@ themeToggle.addEventListener("click", () => {
 darkQuery.addEventListener("change", showTheme);
 showTheme();
 
-// Ved utskrift skal all teksten med, også den bak «Les mer», og alltid i lyse farger.
+// Utskrift skal alltid være i lyse farger.
 let themeBeforePrint;
 window.addEventListener("beforeprint", () => {
-  document.querySelectorAll("details.more").forEach((d) => (d.open = true));
   themeBeforePrint = root.dataset.theme;
   root.dataset.theme = "light";
 });

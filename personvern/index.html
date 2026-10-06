@@ -18,9 +18,9 @@
     <link rel="canonical" href="https://ogtech.no/personvern/" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/ikon-32.png" />
     <link rel="apple-touch-icon" href="../assets/ikon-180.png" />
-    <meta name="theme-color" content="#f8fafd" />
-    <link rel="preload" href="../fonts/manrope.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#eef3f2" />
+    <link rel="preload" href="../fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../styles.css" />
     <script>
       document.documentElement.classList.add("js");
@@ -44,123 +44,122 @@
           <a href="../index.html#om-oss">Om oss</a>
           <a href="../co2-besparelse/index.html">CO2-besparelse</a>
           <a href="../kontakt/index.html">Kontakt</a>
+          <a class="nav-core out" href="https://core.ogtech.no/auth">Ogtech Core</a>
         </nav>
-        <a class="btn" href="https://core.ogtech.no/auth">Ogtech Core</a>
-        <button class="theme-toggle" type="button" aria-label="Bytt til mørk modus">
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.5 6.5 0 0 0 11 11Z" />
-          </svg>
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+        <button class="icon-btn theme-toggle" type="button" aria-label="Bytt til mørk modus">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+            <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
           </svg>
         </button>
-        <button class="menu-toggle" type="button" aria-controls="meny" aria-expanded="false" aria-label="Meny">
-          <span></span><span></span><span></span>
+        <button class="icon-btn menu-toggle" type="button" aria-controls="meny" aria-expanded="false">
+          <span class="menu-text">Meny</span><span class="bars" aria-hidden="true"></span>
         </button>
       </div>
     </header>
 
     <main id="innhold">
-      <section>
+      <section class="page-head">
         <div class="wrap">
-          <div class="prose">
-            <p class="eyebrow">Ogtech</p>
-            <h1>Personvern</h1>
-            <p>
-              OGTECH AS er behandlingsansvarlig for behandlingen av personopplysninger som
-              beskrevet i denne personvernerklæringen. I denne personvernerklæringen forklarer vi
-              hva slags personopplysninger vi lagrer og hvordan vi behandler de. Denne
-              personvernerklæringen gjelder for: https://ogtech.no/
-            </p>
+          <div class="row">
+            <p class="label sticky"><span class="num">OGTECH AS</span><span>Personvernerklæring</span></p>
+            <div class="prose">
+                <h1>Personvern</h1>
+                <p>
+                  OGTECH AS er behandlingsansvarlig for behandlingen av personopplysninger som
+                  beskrevet i denne personvernerklæringen. I denne personvernerklæringen forklarer vi
+                  hva slags personopplysninger vi lagrer og hvordan vi behandler de. Denne
+                  personvernerklæringen gjelder for: https://ogtech.no/
+                </p>
 
-            <h2>Personopplysninger vi samler inn og behandler</h2>
-            <p>Vi behandler følgende kategorier av personopplysninger:</p>
-            <ul>
-              <li>Grunnleggende informasjon: Navn, fødselsdato</li>
-              <li>Kontaktinformasjon: Adresse, telefonnummer, epostadresse</li>
-              <li>
-                Kundeaktivitet: Lese- og handlingshistorikk fra app, nettsider eller elektronisk
-                kommunikasjon vi sender ut. Samt teknisk informasjon om enhetene du bruker.
-              </li>
-            </ul>
-            <p>
-              Personopplysningene samles inn direkte fra deg gjennom informasjon du oppgir til oss
-              og i forbindelse med at du bruker våre tjenester og produkter
-            </p>
+                <h2>Personopplysninger vi samler inn og behandler</h2>
+                <p>Vi behandler følgende kategorier av personopplysninger:</p>
+                <ul>
+                  <li>Grunnleggende informasjon: Navn, fødselsdato</li>
+                  <li>Kontaktinformasjon: Adresse, telefonnummer, epostadresse</li>
+                  <li>
+                    Kundeaktivitet: Lese- og handlingshistorikk fra app, nettsider eller elektronisk
+                    kommunikasjon vi sender ut. Samt teknisk informasjon om enhetene du bruker.
+                  </li>
+                </ul>
+                <p>
+                  Personopplysningene samles inn direkte fra deg gjennom informasjon du oppgir til oss
+                  og i forbindelse med at du bruker våre tjenester og produkter
+                </p>
 
-            <h2>Hvordan vi bruker personopplysningene</h2>
-            <h3>Levering av tjeneste/avtaleinngåelse</h3>
-            <p>
-              Vi bruker dine personopplysninger til å oppfylle våre avtaler med deg, det vil si når
-              du har bestilt et produkt eller en tjeneste fra oss. Det rettslige grunnlaget for å
-              behandle personopplysninger til dette formålet er at behandlingen er nødvendig for å
-              oppfylle en avtale med deg.
-            </p>
-            <h3>Administrasjon av kundeforhold</h3>
-            <p>
-              Vi bruker dine personopplysninger til å administrere vårt kundeforhold med deg. Det
-              kan for eksempel være kundeservice, klagebehandling og feilretting vedrørende ditt
-              kundeforhold. Det rettslige grunnlaget for å behandle personopplysninger til dette
-              formålet er at behandlingen er nødvendig for å oppfylle en avtale med deg.
-            </p>
-            <h3>Analyse, forretningsutvikling og forbedring av tjenester</h3>
-            <p>
-              Vi arbeider kontinuerlig med å utvikle og forbedre våre tjenester og produkter. Mye
-              av dette arbeidet innebærer å analysere ulike former for personopplysninger, som for
-              eksempel kundeaktivitet, kundehistorikk og konto og profilinformasjon. Det rettslige
-              grunnlaget for å behandle personopplysninger til dette formålet er vår berettigede
-              interesse.
-            </p>
+                <h2>Hvordan vi bruker personopplysningene</h2>
+                <h3>Levering av tjeneste/avtaleinngåelse</h3>
+                <p>
+                  Vi bruker dine personopplysninger til å oppfylle våre avtaler med deg, det vil si når
+                  du har bestilt et produkt eller en tjeneste fra oss. Det rettslige grunnlaget for å
+                  behandle personopplysninger til dette formålet er at behandlingen er nødvendig for å
+                  oppfylle en avtale med deg.
+                </p>
+                <h3>Administrasjon av kundeforhold</h3>
+                <p>
+                  Vi bruker dine personopplysninger til å administrere vårt kundeforhold med deg. Det
+                  kan for eksempel være kundeservice, klagebehandling og feilretting vedrørende ditt
+                  kundeforhold. Det rettslige grunnlaget for å behandle personopplysninger til dette
+                  formålet er at behandlingen er nødvendig for å oppfylle en avtale med deg.
+                </p>
+                <h3>Analyse, forretningsutvikling og forbedring av tjenester</h3>
+                <p>
+                  Vi arbeider kontinuerlig med å utvikle og forbedre våre tjenester og produkter. Mye
+                  av dette arbeidet innebærer å analysere ulike former for personopplysninger, som for
+                  eksempel kundeaktivitet, kundehistorikk og konto og profilinformasjon. Det rettslige
+                  grunnlaget for å behandle personopplysninger til dette formålet er vår berettigede
+                  interesse.
+                </p>
 
-            <h2>Dine rettigheter</h2>
-            <p>
-              Dersom du ønsker å utøve noen av dine rettigheter, ta kontakt med oss på
-              <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>.
-            </p>
-            <h3>Rett til innsyn i egne opplysninger</h3>
-            <p>
-              Du kan be om en kopi av alle opplysninger vi behandler om deg. Ta kontakt på
-              epostadressen ovenfor for å bruke innsynsretten din.
-            </p>
-            <h3>Rett til korrigering av personopplysninger</h3>
-            <p>
-              Du har rett til å be oss rette eller supplere opplysninger som er feilaktige eller
-              misvisende.
-            </p>
-            <h3>Retten til sletting av personopplysninger</h3>
-            <p>
-              Du har rett til å få dine personopplysninger slettet uten ugrunnet opphold. Du kan
-              derfor når som helst be oss slette opplysninger om deg selv. Men merk at informasjon
-              som vi er pålagt beholde av hensyn til andre rettslige forpliktelser (som for
-              eksempel bokføringsloven) ikke vil bli slettet.
-            </p>
-            <h3>Begrensning av behandling av personopplysninger</h3>
-            <p>
-              I noen situasjoner kan du også be oss begrense behandlingen av opplysninger om deg.
-              Dette gjør du ved å administrere samtykker eller reservasjoner i våre løsninger.
-            </p>
-            <h3>Protestere mot en behandling av personopplysninger</h3>
-            <p>
-              Dersom vi behandler opplysninger om deg med grunnlag i våre oppgaver eller på
-              bakgrunn av en interesseavveining, har du rett til å protestere på vår behandling av
-              opplysninger om deg. Dette gjør du ved å administrere samtykker eller reservasjoner i
-              våre løsninger.
-            </p>
-            <h3>Dataportabilitet</h3>
-            <p>
-              Du har rett til å få utlevert dine personopplysninger i et strukturert, alminnelig
-              anvendt og maskinlesbart format. Ta kontakt på epostadressen ovenfor for å få
-              utlevert dine personopplysninger.
-            </p>
-            <h3>Du kan klage på vår behandling av personopplysninger</h3>
-            <p>
-              Vi håper du vil si ifra dersom du mener vi ikke overholder reglene i
-              personopplysningsloven. Si da gjerne først i fra gjennom den kontakten eller kanalen
-              du allerede har etablert med oss. Du kan også klage over vår behandling av
-              personopplysninger. Dette gjør du til Datatilsynet.
-            </p>
-            <p>Sist oppdatert: 27.01.2024</p>
+                <h2>Dine rettigheter</h2>
+                <p>
+                  Dersom du ønsker å utøve noen av dine rettigheter, ta kontakt med oss på
+                  <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>.
+                </p>
+                <h3>Rett til innsyn i egne opplysninger</h3>
+                <p>
+                  Du kan be om en kopi av alle opplysninger vi behandler om deg. Ta kontakt på
+                  epostadressen ovenfor for å bruke innsynsretten din.
+                </p>
+                <h3>Rett til korrigering av personopplysninger</h3>
+                <p>
+                  Du har rett til å be oss rette eller supplere opplysninger som er feilaktige eller
+                  misvisende.
+                </p>
+                <h3>Retten til sletting av personopplysninger</h3>
+                <p>
+                  Du har rett til å få dine personopplysninger slettet uten ugrunnet opphold. Du kan
+                  derfor når som helst be oss slette opplysninger om deg selv. Men merk at informasjon
+                  som vi er pålagt beholde av hensyn til andre rettslige forpliktelser (som for
+                  eksempel bokføringsloven) ikke vil bli slettet.
+                </p>
+                <h3>Begrensning av behandling av personopplysninger</h3>
+                <p>
+                  I noen situasjoner kan du også be oss begrense behandlingen av opplysninger om deg.
+                  Dette gjør du ved å administrere samtykker eller reservasjoner i våre løsninger.
+                </p>
+                <h3>Protestere mot en behandling av personopplysninger</h3>
+                <p>
+                  Dersom vi behandler opplysninger om deg med grunnlag i våre oppgaver eller på
+                  bakgrunn av en interesseavveining, har du rett til å protestere på vår behandling av
+                  opplysninger om deg. Dette gjør du ved å administrere samtykker eller reservasjoner i
+                  våre løsninger.
+                </p>
+                <h3>Dataportabilitet</h3>
+                <p>
+                  Du har rett til å få utlevert dine personopplysninger i et strukturert, alminnelig
+                  anvendt og maskinlesbart format. Ta kontakt på epostadressen ovenfor for å få
+                  utlevert dine personopplysninger.
+                </p>
+                <h3>Du kan klage på vår behandling av personopplysninger</h3>
+                <p>
+                  Vi håper du vil si ifra dersom du mener vi ikke overholder reglene i
+                  personopplysningsloven. Si da gjerne først i fra gjennom den kontakten eller kanalen
+                  du allerede har etablert med oss. Du kan også klage over vår behandling av
+                  personopplysninger. Dette gjør du til Datatilsynet.
+                </p>
+                <p>Sist oppdatert: 27.01.2024</p>
+            </div>
           </div>
         </div>
       </section>
@@ -168,11 +167,36 @@
 
     <footer class="footer">
       <div class="wrap">
-        <span>Copyright © <span id="year">2026</span> OGTECH · Ekte miljøteknologi</span>
-        <nav aria-label="Bunnmeny">
-          <a href="../personvern/index.html">Personvern</a>
-          <a href="https://core.ogtech.no/auth">Ogtech Core</a>
-        </nav>
+        <p class="footer-claim">Ekte <em>miljøteknologi</em>.</p>
+        <div class="footer-cols">
+          <div>
+            <span class="label">Kontakt</span>
+            <a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a>
+            <a href="mailto:herman@ogtech.no">herman@ogtech.no</a>
+            <a href="tel:+4797565371">+47 975 65 371</a>
+          </div>
+          <div>
+            <span class="label">Besøk oss</span>
+            <p>Kystveien 2, 4. etg<br />4841 Arendal</p>
+          </div>
+          <div>
+            <span class="label">Sider</span>
+            <a href="../produkter/index.html">Produkter</a>
+            <a href="../co2-besparelse/index.html">CO2-besparelse</a>
+            <a href="../kontakt/index.html">Kontakt</a>
+          </div>
+          <div>
+            <span class="label">Posisjon</span>
+            <p>58°27′N 8°46′E</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> OGTECH AS</span>
+          <nav aria-label="Bunnmeny">
+            <a href="../personvern/index.html">Personvern</a>
+            <a href="https://core.ogtech.no/auth">Ogtech Core</a>
+          </nav>
+        </div>
       </div>
     </footer>
 
