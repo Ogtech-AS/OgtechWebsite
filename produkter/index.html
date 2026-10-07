@@ -51,30 +51,15 @@
     <main id="innhold">
       <section class="page-header">
         <div class="container">
-          <div class="split">
-            <div>
-              <ol class="breadcrumb">
-                <li><a href="../index.html">Forside</a></li>
-                <li aria-current="page">Produkter</li>
-              </ol>
-              <h1>Lavere oksygenpris, energibesparende og sikker oksygentilgang</h1>
-              <p class="lead">
-                Våre oksygenløsninger er skreddersydd for akvakulturindustrien, med muligheter for
-                både presis oksygenregulering og effektiv energigjenvinning.
-              </p>
-            </div>
-            <div class="product-shot">
-              <img
-                src="../assets/oxygen600-drift.webp"
-                srcset="../assets/oxygen600-drift-768.webp 768w, ../assets/oxygen600-drift.webp 1536w"
-                sizes="(min-width: 960px) 34rem, 100vw"
-                alt="OxyGen600 oksygenanlegg i kabinett, levert av Ogtech"
-                width="1536"
-                height="1152"
-                fetchpriority="high"
-              />
-            </div>
-          </div>
+          <ol class="breadcrumb">
+            <li><a href="../index.html">Forside</a></li>
+            <li aria-current="page">Produkter</li>
+          </ol>
+          <h1>Lavere oksygenpris, energibesparende og sikker oksygentilgang</h1>
+          <p class="lead">
+            Våre oksygenløsninger er skreddersydd for akvakulturindustrien, med muligheter for
+            både presis oksygenregulering og effektiv energigjenvinning.
+          </p>
         </div>
       </section>
 
@@ -119,22 +104,15 @@
               </details>
             </div>
             <div>
-              <div class="product-shot">
-                <img
-                  src="../assets/oxygen600-3d.webp"
-                  alt="3D-modell av et kompakt oksygenanlegg fra Ogtech"
-                  width="1024"
-                  height="640"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              <div class="panel">
+              <h3>Tekniske data</h3>
               <dl class="specs">
                 <div><dt>Kapasitet</dt><dd>10–20 000 kg oksygen per døgn</dd></div>
-                <div><dt>Teknologi</dt><dd>PSA og VPSA</dd></div>
-                <div><dt>Plassering</dt><dd>I kundens lokaler, i container eller kabinett</dd></div>
+                <div><dt>Teknologi</dt><dd>PSA, VSA og VPSA</dd></div>
+                <div><dt>Plassering</dt><dd>Container, lekter, maskinrom, dekk eller egne lokaler</dd></div>
                 <div><dt>Tilvalg</dt><dd>Oksygenregulering og energigjenvinning</dd></div>
               </dl>
+              </div>
             </div>
           </div>
         </div>
@@ -230,30 +208,19 @@
                 </div>
               </details>
             </div>
-            <div class="screens stack">
-              <figure>
-                <img
-                  src="../assets/core-noekkeltall.webp"
-                  alt="OgTechCore dashboard med nøkkeltall for oksygenanlegg"
-                  width="1137"
-                  height="810"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Oversikt med nøkkeltall for innløp og utløp.</figcaption>
-              </figure>
-              <figure>
-                <img
-                  src="../assets/core-operations.webp"
-                  alt="OgTechCore styringssystem – live oversikt over oksygenproduksjon"
-                  width="1086"
-                  height="812"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption>Stegvis start, pause og stopp med automatisk kontroll av betingelser.</figcaption>
-              </figure>
-            </div>
+            <figure>
+              <div class="dash" aria-hidden="true">
+                <div class="dash-bar">OgTechCore<span class="dash-status">Normal drift</span></div>
+                <dl class="dash-grid">
+                  <div><dt>O₂-flow</dt><dd>325 <small>kg/h</small></dd></div>
+                  <div><dt>O₂-renhet</dt><dd>93,1 <small>%</small></dd></div>
+                  <div><dt>Trykk ut</dt><dd>8 <small>bar</small></dd></div>
+                  <div><dt>Temperatur inn</dt><dd>21,2 <small>°C</small></dd></div>
+                </dl>
+                <div class="dash-alert"><b>Produksjon:</b> startet · Alle systemer fungerer normalt</div>
+              </div>
+              <figcaption>Eksempel på visning i OgTechCore.</figcaption>
+            </figure>
           </div>
         </div>
       </section>

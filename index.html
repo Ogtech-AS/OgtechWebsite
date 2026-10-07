@@ -69,121 +69,141 @@
     </header>
 
     <main id="innhold">
-      <!-- 1. Toppen: hva vi gjør, og de to viktigste handlingene. -->
-      <section class="hero">
-        <img
-          class="hero-bg"
-          src="assets/hero-laks.webp"
-          srcset="assets/hero-laks-800.webp 800w, assets/hero-laks.webp 1600w"
-          sizes="100vw"
-          alt=""
-          width="1600"
-          height="1200"
-          fetchpriority="high"
-        />
+      <!-- 1. Toppen: løftet, de to viktigste handlingene og tallene som gjør løftet konkret. -->
+      <section class="hero plain">
         <div class="container">
           <div class="hero-text">
-            <p class="overline">Lokalprodusert oksygen til havbruk</p>
+            <p class="overline">Oksygenanlegg for havbruk</p>
             <h1>Produser oksygenet selv <span class="h1-sub">lavere pris, sikker tilgang</span></h1>
             <p>
-              Ogtech leverer skreddersydde oksygenanlegg, backupsystemer og styringssystemet
-              OgTechCore til sjøanlegg og landbasert oppdrett.
+              Ogtech leverer skreddersydde oksygenanlegg med backup og styringssystem til sjøanlegg
+              og landbasert oppdrett – utviklet utelukkende for akvakultur.
             </p>
             <div class="buttons">
               <a class="btn btn-white" href="kontakt/index.html">Be om tilbud</a>
-              <a class="btn btn-clear" href="#hvorfor">Se hvordan det fungerer</a>
+              <a class="btn btn-clear" href="#slik">Se hvordan det fungerer</a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- 2. Faktalinje: det kjøperen bryr seg om, ikke teknologinavn. -->
-      <div class="keyfacts">
-        <div class="container">
-          <ul>
+          <ul class="hero-facts" aria-label="Kort om løsningen">
             <li><b>10–20 000 kg</b><span>oksygen per døgn</span></li>
-            <li><b>Oksygenbackup</b><span>fra tank, trykkflasker eller samme teknologi</span></li>
-            <li><b>Opptil 1000 kVA</b><span>strømbackup ved strømbrudd</span></li>
             <li><b>24/7</b><span>overvåkning med varsler til mobilen</span></li>
+            <li><b>Opptil 1000 kVA</b><span>strømbackup ved strømbrudd</span></li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <!-- 3. Hvorfor: gevinsten ved å bytte til egenproduksjon. -->
+      <!-- 2. Slik fungerer det: mekanismen i tre steg, med sikkerhetsnettet under. -->
       <section class="section">
         <div class="container">
-          <div class="split">
-            <div class="text" id="hvorfor">
-              <p class="overline">Egenproduksjon</p>
-              <h2>Hvorfor produsere oksygenet selv?</h2>
-              <p>
-                Egenproduksjon er den mest kostnadseffektive løsningen for oksygen til akvakultur.
-              </p>
-              <ul class="checklist">
-                <li><b>Lavere oksygenpris</b><span>Lave livsløpskostnader per produserte kg oksygen.</span></li>
-                <li><b>Sikker oksygentilgang</b><span>Backup fra tank eller samme teknologi, og strømbackup ved strømbrudd.</span></li>
-                <li><b>Energibesparende</b><span>Kan leveres med oksygenregulering og energigjenvinning.</span></li>
-                <li><b>Mindre transport og utslipp</b><span>Oksygenet produseres der det brukes.</span></li>
-              </ul>
-              <div class="buttons">
-                <a class="btn" href="co2-besparelse/index.html">Beregn CO2-besparelsen</a>
-              </div>
-            </div>
-            <div class="product-shot">
-              <img
-                src="assets/oxygen600-drift.webp"
-                srcset="assets/oxygen600-drift-768.webp 768w, assets/oxygen600-drift.webp 1536w"
-                sizes="(min-width: 960px) 34rem, 100vw"
-                alt="OxyGen600 oksygenanlegg i kabinett, levert av Ogtech"
-                width="1536"
-                height="1152"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+          <div class="section-head" id="slik">
+            <p class="overline">Slik fungerer det</p>
+            <h2>Fra luft til fisk – uten tankbil</h2>
+            <p>Oksygenet lages der det brukes, av et anlegg som står på eller ved anlegget deres.</p>
+          </div>
+          <ol class="flow">
+            <li><b>Luft inn</b><span>Anlegget henter vanlig luft fra omgivelsene.</span></li>
+            <li><b>Oksygen skilles ut</b><span>PSA-, VSA- eller VPSA-teknologi skiller oksygenet fra lufta, på stedet.</span></li>
+            <li><b>Rett til fisken</b><span>Oksygenet går direkte til produksjonen, uten transport.</span></li>
+          </ol>
+          <div class="safety">
+            <p><b>Backup:</b> oksygen fra tank, trykkflasker eller samme teknologi – og strøm fra batteri, hybrid eller diesel.</p>
+            <p><b>OgTechCore:</b> overvåker trykk, flow og renhet døgnet rundt, og varsler mobilen ved avvik.</p>
           </div>
         </div>
       </section>
 
-      <!-- 4. Løsningen: oksygenanlegget først, backup og tilpasning som støtte. -->
+      <!-- 3. Sammenligning: hvorfor bytte fra levert oksygen. -->
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="overline">Hvorfor bytte?</p>
+            <h2>Levert oksygen eller egen produksjon?</h2>
+            <p>Egenproduksjon er den mest kostnadseffektive løsningen for oksygen til akvakultur.</p>
+          </div>
+          <table class="compare">
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Levert oksygen</th>
+                <th scope="col" class="us">Eget anlegg fra Ogtech</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Pris</th>
+                <td data-label="Levert oksygen">Transporten betales i hver leveranse</td>
+                <td data-label="Eget anlegg fra Ogtech" class="us">Lave livsløpskostnader per kg oksygen</td>
+              </tr>
+              <tr>
+                <th scope="row">Tilgang</th>
+                <td data-label="Levert oksygen">Avhengig av at leveransen kommer</td>
+                <td data-label="Eget anlegg fra Ogtech" class="us">Produseres på anlegget, med backup</td>
+              </tr>
+              <tr>
+                <th scope="row">Drift</th>
+                <td data-label="Levert oksygen">Bestilling og mottak av leveranser</td>
+                <td data-label="Eget anlegg fra Ogtech" class="us">Kontinuerlig produksjon, overvåket 24/7</td>
+              </tr>
+              <tr>
+                <th scope="row">Utslipp</th>
+                <td data-label="Levert oksygen">Vogntog tur/retur for hver leveranse</td>
+                <td data-label="Eget anlegg fra Ogtech" class="us">Ingen transport av oksygen</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Tilpasset stedet: der anlegget kan stå. -->
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="overline">Plassering</p>
+            <h2>Kompakt, og tilpasset stedet</h2>
+            <p>Anlegget designes for der det skal stå, med plass til drift og vedlikehold fra start.</p>
+          </div>
+          <ul class="places">
+            <li><b>Container</b><span>Komplett anlegg i kompakt format, klart til å settes ved fiskeproduksjonen.</span></li>
+            <li><b>Lekter</b><span>Produksjon og backup tilpasset plassen og systemene om bord.</span></li>
+            <li><b>Maskinrom</b><span>Bygget inn i rommet, med ventilasjon og servicetilgang tatt med i designet.</span></li>
+            <li><b>Dekk</b><span>Kompakt og beskyttet mot været, med enkel tilgang for drift.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. Tilbudet: alt som trengs, fra én leverandør. -->
       <section class="section alt" id="produkter">
         <div class="container">
           <div class="section-head">
             <p class="overline">Produkter og service</p>
-            <h2>Vi skreddersyr oksygenløsninger for akvakultur</h2>
+            <h2>Alt dere trenger, fra én leverandør</h2>
           </div>
-          <article class="card feature">
-            <div class="card-media contain">
-              <img
-                src="assets/oxygen600-3d.webp"
-                alt="3D-modell av et kompakt oksygenanlegg fra Ogtech"
-                width="1024"
-                height="640"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Oksygenanlegg</h3>
-              <p>
-                Spesialtilpassede oksygenanlegg, fra 10 til 20 000 kg oksygen per døgn. Installert i
-                kundens lokaler eller i container/kabinett tilknyttet fiskeproduksjonen.
-              </p>
-              <a class="more" href="produkter/index.html#oksygenanlegg">Les mer om oksygenanlegg</a>
-            </div>
-          </article>
           <div class="cards">
             <article class="card">
               <div class="card-body">
+                <h3>Oksygenanlegg</h3>
+                <p>Fra 10 til 20 000 kg oksygen per døgn, med PSA-, VSA- eller VPSA-teknologi.</p>
+                <a class="more" href="produkter/index.html#oksygenanlegg">Les mer om oksygenanlegg</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-body">
                 <h3>Backupsystem</h3>
-                <p>Backup fra oksygentank eller løsning med samme teknologi, med strømbackup fra batteri, hybrid eller diesel.</p>
+                <p>Oksygen fra tank, trykkflasker eller samme teknologi, og strømbackup fra små enheter til 1000 kVA.</p>
                 <a class="more" href="produkter/index.html#backupsystem">Les mer om backup</a>
               </div>
             </article>
             <article class="card">
               <div class="card-body">
+                <h3>OgTechCore</h3>
+                <p>Styringssystemet som samler status, trykk, temperatur, flow og renhet på ett sted.</p>
+                <a class="more" href="produkter/index.html#ogtechcore">Les mer om OgTechCore</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-body">
                 <h3>Tilpasset teknologi</h3>
-                <p>Vi leverer løsninger som fungerer sammen med LOX eller trykkflasker.</p>
+                <p>Har dere LOX eller trykkflasker i dag? Vi leverer løsninger som fungerer sammen med det.</p>
                 <a class="more" href="produkter/index.html#tilpasset-teknologi">Les mer</a>
               </div>
             </article>
@@ -197,32 +217,51 @@
           <div class="split">
             <div class="text">
               <p class="overline">Styring og automasjon</p>
-              <h2>OgTechCore: full oversikt, uten forkunnskaper</h2>
-              <p class="lead">Status, trykk, temperatur, flow og renhet samlet på ett sted.</p>
+              <h2>Full kontroll, uten forkunnskaper</h2>
+              <p class="lead">Med OgTechCore ser dere hele anlegget på ett sted – også utenfor maskinrommet.</p>
               <ul class="checklist">
-                <li><b>Overvåkning døgnet rundt</b><span>Feilmeldinger sendes automatisk til driftsoperatørens mobil.</span></li>
-                <li><b>Trygg drift</b><span>Stegvis oppstart og nedstengning, med automatisk kontroll av betingelser.</span></li>
-                <li><b>Fjernhjelp</b><span>Der avanserte innstillinger kreves, bistår vi direkte via remote control.</span></li>
+                <li><b>Varsler med en gang</b><span>Feilmeldinger sendes automatisk til driftsoperatørens mobil.</span></li>
+                <li><b>Trygg start og stopp</b><span>Systemet guider trinn for trinn og kontrollerer betingelsene før hver handling.</span></li>
+                <li><b>Hjelp når det trengs</b><span>Der avanserte innstillinger kreves, bistår vi direkte via fjernstyring.</span></li>
               </ul>
               <a class="more" href="produkter/index.html#ogtechcore">Les mer om OgTechCore</a>
             </div>
-            <div class="shot">
-              <img
-                src="assets/core-noekkeltall.webp"
-                alt="OgTechCore dashboard med nøkkeltall for oksygenanlegg"
-                width="1137"
-                height="810"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <figure>
+              <div class="dash" aria-hidden="true">
+                <div class="dash-bar">OgTechCore<span class="dash-status">Normal drift</span></div>
+                <dl class="dash-grid">
+                  <div><dt>O₂-flow</dt><dd>325 <small>kg/h</small></dd></div>
+                  <div><dt>O₂-renhet</dt><dd>93,1 <small>%</small></dd></div>
+                  <div><dt>Trykk ut</dt><dd>8 <small>bar</small></dd></div>
+                  <div><dt>Temperatur inn</dt><dd>21,2 <small>°C</small></dd></div>
+                </dl>
+                <div class="dash-alert"><b>Produksjon:</b> startet · Alle systemer fungerer normalt</div>
+              </div>
+              <figcaption>Eksempel på visning i OgTechCore.</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
+      <!-- 6. Hvorfor Ogtech: tillit. -->
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head" id="om-oss">
+            <p class="overline">Om Ogtech</p>
+            <h2>Bygget for havbruk, av folk fra havbruk</h2>
+          </div>
+          <ul class="reasons">
+            <li><b>Fra oppdrettsnæringen</b><span>Grunnlagt av erfarne fagfolk fra oppdrett, i samarbeid med eksperter på oksygenproduksjon.</span></li>
+            <li><b>Kun akvakultur</b><span>Alle løsningene våre er utviklet for akvakultur, og tilpasses hvert enkelt anlegg.</span></li>
+            <li><b>Driftssikker teknologi</b><span>Atlas Copcos patenterte teknologi, kombinert med egne løsninger.</span></li>
+            <li><b>Fulgt opp etter levering</b><span>Service, overvåkning og fjernhjelp gjennom OgTechCore.</span></li>
+          </ul>
+        </div>
+      </section>
+
       <!--
-        BEVIS (ferdig mal): fyll inn og fjern kommentartegnene rundt seksjonen.
-        Bytt ut [klammene] med ekte tall, kunder og sitater. Legg logoer i assets/.
+        REFERANSER (ferdig mal): fyll inn og fjern kommentartegnene rundt seksjonen.
+        Bytt ut [klammene] med ekte tall, kunder og sitater.
 
       <section class="section alt">
         <div class="container">
@@ -244,84 +283,90 @@
               </div>
             </figure>
           </div>
-          <ul class="logos">
-            <li><img src="assets/[partner-logo].png" alt="[Partnernavn]" height="40" /></li>
-          </ul>
         </div>
       </section>
       -->
 
-      <!--
-        SLIK JOBBER VI (ferdig mal): bekreft eller endre stegene, og fjern kommentartegnene.
-
-      <section class="section">
+      <!-- 7. Regneeksempel med samme formel som CO2-kalkulatoren. -->
+      <section class="section" aria-label="Regneeksempel CO2">
         <div class="container">
-          <div class="section-head">
-            <p class="overline">Slik jobber vi</p>
-            <h2>Fra behov til drift</h2>
+          <div class="example">
+            <div>
+              <p class="overline">Regneeksempel</p>
+              <h2>Hvor mye transport slipper dere?</h2>
+              <p>
+                Et anlegg 300 km fra oksygenfabrikken, som bruker 300 000 kg oksygen i året, trenger
+                20 vogntog i året. Med egen produksjon forsvinner den transporten.
+              </p>
+              <div class="buttons">
+                <a class="btn" href="co2-besparelse/index.html">Regn på ditt anlegg</a>
+              </div>
+            </div>
+            <dl class="example-figures">
+              <div><dt>Vogntog spart</dt><dd>20 per år</dd></div>
+              <div><dt>CO2 unngått</dt><dd>8,5 tonn</dd></div>
+            </dl>
           </div>
-          <ol class="steps">
-            <li><b>Kartlegging</b><span>Vi går gjennom oksygenbehov, anlegg og dagens forsyning.</span></li>
-            <li><b>Dimensjonering og tilbud</b><span>Vi foreslår anlegg, backup og plassering, med pris.</span></li>
-            <li><b>Levering og installasjon</b><span>Anlegget settes opp i deres lokaler, container eller kabinett.</span></li>
-            <li><b>Drift med OgTechCore</b><span>Overvåkning døgnet rundt, og hjelp fra oss når det trengs.</span></li>
-          </ol>
         </div>
       </section>
-      -->
 
-      <!-- 6. Om Ogtech: kort, med vekt på bakgrunnen fra oppdrett. -->
+      <!-- 8. Vanlige spørsmål: innvendingene en kjøper har før de tar kontakt. -->
       <section class="section alt">
         <div class="container">
-          <div class="split">
-            <div class="photo">
-              <img
-                src="assets/kunnskapshavna.webp"
-                srcset="assets/kunnskapshavna-640.webp 640w, assets/kunnskapshavna.webp 1280w"
-                sizes="(min-width: 960px) 34rem, 100vw"
-                alt="Kontorbygget til Ogtech på Kunnskapshavna i Arendal"
-                width="1280"
-                height="960"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="text" id="om-oss">
-              <p class="overline">Om Ogtech</p>
-              <h2>Grunnlagt av fagfolk fra oppdrettsnæringen</h2>
-              <p class="lead">
-                Ogtech er grunnlagt av erfarne fagfolk fra fiskeoppdrettsindustrien, i samarbeid med
-                eksperter innen oksygenproduksjon. Vi tilpasser løsninger utelukkende for akvakultur.
+          <div class="section-head">
+            <p class="overline">Vanlige spørsmål</p>
+            <h2>Det de fleste lurer på</h2>
+          </div>
+          <div class="faq">
+            <details>
+              <summary>Hva skjer ved strømbrudd?</summary>
+              <p>
+                Anlegget kan leveres med strømbackup fra batteri, hybrid eller diesel, fra små enheter
+                til 1000 kVA. I tillegg kan oksygenbackup fra tank, trykkflasker eller samme teknologi
+                ta over.
               </p>
-              <details class="readmore">
-                <summary></summary>
-                <div class="readmore-body">
-                  <p>
-                    Vår kjernemisjon er å fremme fiskevelferd gjennom levering av høykvalitets
-                    oksygenløsninger, designet for å minimere energiforbruket uten å gå på
-                    kompromiss med effektiviteten.
-                  </p>
-                  <p>
-                    Våre anlegg er nøye tilpasset behovene i oppdrettsindustrien, og vi legger stor
-                    vekt på brukervennlighet og pålitelighet. Ved å velge Ogtech, velger du en
-                    partner som er dedikert til å tilby bærekraftige, effektive og
-                    kostnadsbesparende løsninger.
-                  </p>
-                  <p>Kontoret vårt ligger på Kunnskapshavna i Arendal.</p>
-                </div>
-              </details>
-            </div>
+            </details>
+            <details>
+              <summary>Trenger vi egne folk med kompetanse på oksygen?</summary>
+              <p>
+                Nei. OgTechCore guider operatøren trinn for trinn ved start, pause og stopp, og krever
+                null forkunnskaper. Der avanserte innstillinger trengs, hjelper vi til via
+                fjernstyring.
+              </p>
+            </details>
+            <details>
+              <summary>Kan vi beholde dagens LOX-tank?</summary>
+              <p>Ja. Vi leverer løsninger som fungerer sammen med LOX eller trykkflasker.</p>
+            </details>
+            <details>
+              <summary>Hvor plasseres anlegget?</summary>
+              <p>I container, på lekter, i maskinrom eller på dekk – eller i egne lokaler ved fiskeproduksjonen.</p>
+            </details>
+            <details>
+              <summary>Hvor stort anlegg trenger vi?</summary>
+              <p>
+                Vi leverer fra 10 til 20 000 kg oksygen per døgn, og dimensjonerer anlegget etter
+                forbruket deres. Ta kontakt, så regner vi på det.
+              </p>
+            </details>
+            <details>
+              <summary>Hvordan følger vi med på driften?</summary>
+              <p>
+                Med OgTechCore ser dere status, trykk, temperatur, flow og renhet på ett sted, også
+                utenfor maskinrommet via 4G/5G. Feilmeldinger sendes automatisk til mobilen.
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
-      <!-- 7. Avslutning: direkte kontakt med folk, ikke et skjema. -->
+      <!-- 9. Avslutning: direkte kontakt med folk. -->
       <section class="section" aria-label="Kontakt oss">
         <div class="container">
           <div class="cta-box">
             <div>
-              <h2>Ta gjerne kontakt for et uforpliktende tilbud</h2>
-              <p>Snakk direkte med oss om ditt anlegg.</p>
+              <h2>Få et uforpliktende tilbud</h2>
+              <p>Fortell oss om anlegget og forbruket deres, så regner vi på riktig løsning.</p>
               <ul class="cta-contacts">
                 <li><span>Kristian</span><a href="mailto:kristian@ogtech.no">kristian@ogtech.no</a></li>
                 <li><span>Herman</span><a href="mailto:herman@ogtech.no">herman@ogtech.no</a></li>

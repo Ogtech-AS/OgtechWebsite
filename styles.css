@@ -1184,6 +1184,577 @@ figcaption {
   font-size: 14px;
 }
 
+/* ---------- Hero uten bilde ---------- */
+
+.hero.plain {
+  min-height: 0;
+  background-color: #0b2232;
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, rgb(63 193 182 / 18%), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, rgb(22 64 94 / 70%), transparent 60%);
+}
+
+.hero.plain::after {
+  display: none;
+}
+
+.hero.plain .container {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+/* Nøkkeltall i et panel ved siden av tittelen. */
+.hero-facts {
+  display: grid;
+  margin: 0;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 10px;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(255 255 255 / 4%);
+  list-style: none;
+}
+
+.hero-facts li {
+  padding-block: 1.1rem;
+}
+
+.hero-facts li + li {
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.hero-facts b {
+  display: block;
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-facts span {
+  color: rgb(255 255 255 / 72%);
+  font-size: 15px;
+}
+
+/* ---------- Slik fungerer det ---------- */
+
+.flow {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: flyt;
+}
+
+.flow li {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: var(--surface);
+  counter-increment: flyt;
+}
+
+.flow li::before {
+  content: counter(flyt);
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  place-items: center;
+  border-radius: 999px;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.flow b {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.flow span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+}
+
+/* Pil mellom stegene. */
+.flow li + li::after {
+  content: "";
+  position: absolute;
+  top: -0.85rem;
+  left: 2.25rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+}
+
+.safety {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.safety p {
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  color: var(--ink-soft);
+}
+
+.safety b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Sammenligning ---------- */
+
+.compare {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--surface);
+}
+
+.compare th,
+.compare td {
+  padding: 1.1rem 1.25rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare thead th {
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.compare tbody tr + tr > * {
+  border-top: 1px solid var(--line);
+}
+
+.compare tbody th {
+  font-weight: 600;
+}
+
+.compare td {
+  color: var(--ink-soft);
+}
+
+/* Kolonnen for eget anlegg er den vi vil at øyet skal lande på. */
+.compare .us {
+  background-color: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.compare thead .us {
+  color: var(--accent);
+}
+
+@media (max-width: 719px) {
+  .compare,
+  .compare tbody,
+  .compare tr,
+  .compare th,
+  .compare td {
+    display: block;
+  }
+
+  .compare thead {
+    display: none;
+  }
+
+  .compare tbody th {
+    padding-bottom: 0.25rem;
+  }
+
+  .compare tbody tr + tr > * {
+    border-top: 0;
+  }
+
+  .compare tbody tr + tr {
+    border-top: 1px solid var(--line);
+  }
+
+  .compare td {
+    padding-top: 0.5rem;
+  }
+
+  .compare td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .compare .us::before {
+    color: var(--accent);
+  }
+}
+
+/* ---------- Eksempel på kontrollpanel (OgTechCore) ---------- */
+
+.dash {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--surface);
+  box-shadow: 0 24px 48px -28px rgb(11 34 50 / 45%);
+}
+
+.dash-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem 1.25rem;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dash-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.dash-status::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background-color: currentColor;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: 0;
+  background-color: var(--line);
+}
+
+.dash-grid div {
+  padding: 1rem 1.25rem;
+  background-color: var(--surface);
+}
+
+.dash-grid dt {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.dash-grid dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-grid dd small {
+  color: var(--ink-soft);
+  font-size: 0.55em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.dash-alert {
+  display: flex;
+  gap: 0.75rem;
+  border-top: 1px solid var(--line);
+  padding: 0.9rem 1.25rem;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+.dash-alert b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.dash + figcaption {
+  text-align: right;
+}
+
+/* ---------- Hvorfor Ogtech ---------- */
+
+.reasons {
+  display: grid;
+  gap: 2rem 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reasons li {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.1rem;
+}
+
+.reasons b {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.reasons span {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Plassering ---------- */
+
+.places {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.places li {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.25rem 1.4rem;
+  background-color: var(--surface);
+}
+
+.places b {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.places span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+@media (min-width: 640px) {
+  .places {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .places {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- Regneeksempel ---------- */
+
+.example {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 10px;
+  padding: clamp(1.75rem, 5vw, 3rem);
+  background-color: var(--navy);
+  color: var(--on-navy);
+}
+
+.example p {
+  color: var(--on-navy-soft);
+}
+
+.example .overline {
+  color: #7fd6cc;
+}
+
+.example-figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+}
+
+.example-figures div {
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+  background-color: rgb(255 255 255 / 6%);
+}
+
+.example-figures dt {
+  color: var(--on-navy-soft);
+  font-size: 14px;
+}
+
+.example-figures dd {
+  margin: 0.2rem 0 0;
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.example .btn {
+  border-color: #fff;
+  background-color: #fff;
+  color: #0b2232;
+}
+
+.example .btn:hover {
+  border-color: #dfeceb;
+  background-color: #dfeceb;
+}
+
+/* ---------- Vanlige spørsmål ---------- */
+
+.faq {
+  max-width: 50rem;
+  border-top: 1px solid var(--line);
+}
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq summary:hover {
+  color: var(--accent);
+}
+
+.faq details p {
+  max-width: 44rem;
+  padding-bottom: 1.25rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Undersider uten bilde ---------- */
+
+.panel-note {
+  margin-top: 1.5rem;
+  font-size: 15px;
+}
+
+.steps-mini {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: mini;
+}
+
+.steps-mini li {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 0.75rem;
+  counter-increment: mini;
+}
+
+.steps-mini li::before {
+  content: counter(mini);
+  grid-row: span 2;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.steps-mini b {
+  font-weight: 600;
+}
+
+.steps-mini span {
+  color: var(--ink-soft);
+}
+
+@media (min-width: 720px) {
+  .reasons {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .safety {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero.plain .container {
+    grid-template-columns: 7fr 4fr;
+    gap: 4rem;
+  }
+
+  .flow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Pilene peker mot høyre når stegene står ved siden av hverandre. */
+  .flow li + li::after {
+    top: 2.15rem;
+    left: -0.95rem;
+    transform: rotate(-45deg);
+  }
+
+  .example {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .reasons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
 /* ---------- Bredere skjermer ---------- */
 
 @media (min-width: 640px) {
