@@ -316,6 +316,27 @@ a {
   color: var(--accent);
 }
 
+/* Språkvelger (NO / EN) til høyre i menyen. */
+.nav .lang {
+  display: inline-flex;
+  gap: 0.15rem;
+  margin-left: 0.5rem;
+  border-left: 1px solid var(--line);
+  padding-left: 0.6rem;
+}
+
+.nav .lang a {
+  padding: 0.35rem 0.5rem;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav .lang a[aria-current="true"] {
+  background-color: var(--bg-alt);
+  color: var(--ink);
+}
+
 .header .btn {
   padding: 0.65rem 1.1rem;
 }
@@ -940,113 +961,6 @@ a {
   border-radius: 8px;
 }
 
-/* ---------- Kalkulator ---------- */
-
-.panel {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: clamp(1.5rem, 4vw, 2.25rem);
-  background-color: var(--surface);
-}
-
-.panel h2 {
-  font-size: 1.4rem;
-}
-
-.calc-form {
-  display: grid;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
-
-.calc-form label {
-  display: grid;
-  gap: 0.4rem;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.calc-form input {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 0.75rem 0.9rem;
-  background-color: var(--bg);
-  color: var(--ink);
-  font: inherit;
-  font-size: 17px;
-  font-weight: 400;
-}
-
-.calc-form input:focus {
-  border-color: var(--accent);
-  outline: none;
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-.calc-form .btn {
-  justify-self: start;
-}
-
-.calc-error {
-  margin-top: 1rem;
-  color: var(--danger);
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.results {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.75rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1.75rem;
-}
-
-.result {
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  background-color: var(--bg-alt);
-}
-
-.result b {
-  display: block;
-  font-size: 1.9rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-}
-
-.result span {
-  color: var(--ink-soft);
-  font-size: 15px;
-}
-
-.method {
-  margin-top: 1.25rem;
-  padding: 0;
-  list-style: none;
-}
-
-.method li {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  border-bottom: 1px solid var(--line);
-  padding-block: 0.7rem;
-  font-size: 15px;
-}
-
-.method li span {
-  color: var(--ink-soft);
-}
-
-.method li b {
-  font-weight: 600;
-  text-align: right;
-}
-
 /* ---------- Kontakt ---------- */
 
 .contact-list {
@@ -1196,6 +1110,11 @@ figcaption {
 
 .hero.plain::after {
   display: none;
+}
+
+/* Tittelen deler plass med nøkkeltallene, så den er litt mindre enn i et bildehero. */
+.hero.plain h1 {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
 }
 
 .hero.plain .container {
@@ -1585,6 +1504,11 @@ figcaption {
   color: #7fd6cc;
 }
 
+.example .example-note {
+  margin-top: 1.25rem;
+  font-size: 14px;
+}
+
 .example-figures {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1775,10 +1699,6 @@ figcaption {
     padding-left: 1.5rem;
   }
 
-  .results {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .specs div {
     grid-template-columns: 11rem 1fr;
   }
@@ -1920,6 +1840,20 @@ figcaption {
   .js .nav a:hover {
     background-color: transparent;
     color: var(--accent);
+  }
+
+  .js .nav .lang {
+    margin: 1rem 0 0;
+    border: 0;
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  .js .nav .lang a {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.45rem 0.9rem;
+    font-size: 15px;
   }
 
   .subnav {
