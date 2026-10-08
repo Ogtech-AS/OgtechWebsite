@@ -1178,8 +1178,7 @@ figcaption {
 /* Store tall bruker overskriftsskriften. */
 .hero-facts b,
 .keyfacts b,
-.dash-grid dd,
-.example-figures dd {
+.dash-grid dd {
   font-family: var(--font-heading);
 }
 
@@ -1523,68 +1522,6 @@ figcaption {
   }
 }
 
-/* ---------- Regneeksempel ---------- */
-
-.example {
-  display: grid;
-  gap: 2rem;
-  align-items: center;
-  border-radius: 10px;
-  padding: clamp(1.75rem, 5vw, 3rem);
-  background-color: var(--navy);
-  color: var(--on-navy);
-}
-
-.example p {
-  color: var(--on-navy-soft);
-}
-
-.example .overline {
-  color: #7fd6cc;
-}
-
-.example .example-note {
-  margin-top: 1.25rem;
-  font-size: 14px;
-}
-
-.example-figures {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 0;
-}
-
-.example-figures div {
-  border-radius: 8px;
-  padding: 1.1rem 1.25rem;
-  background-color: rgb(255 255 255 / 6%);
-}
-
-.example-figures dt {
-  color: var(--on-navy-soft);
-  font-size: 14px;
-}
-
-.example-figures dd {
-  margin: 0.2rem 0 0;
-  color: #fff;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.example .btn {
-  border-color: #fff;
-  background-color: #fff;
-  color: #0b2232;
-}
-
-.example .btn:hover {
-  border-color: #dfeceb;
-  background-color: #dfeceb;
-}
-
 /* ---------- Vanlige spørsmål ---------- */
 
 .faq {
@@ -1705,11 +1642,6 @@ figcaption {
     top: 2.15rem;
     left: -0.95rem;
     transform: rotate(-45deg);
-  }
-
-  .example {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
   }
 
   .reasons {
